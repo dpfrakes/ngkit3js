@@ -1,7 +1,7 @@
 import Animations from './internal/slideshow-animations';
 import Transitioner from './internal/slideshow-transitioner';
 import Slider from './slider.js';
-import {addClass, assign, fastdom, isNumber, removeClass} from 'uikit-util';
+import {addClass, assign, fastdom, isNumber, removeClass} from 'ngkit-util';
 
 export default {
 
@@ -13,7 +13,7 @@ export default {
 
     data: {
         animation: 'slide',
-        clsActivated: 'uk-transition-active',
+        clsActivated: 'ng-transition-active',
         Animations,
         Transitioner
     },

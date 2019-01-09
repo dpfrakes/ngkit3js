@@ -1,15 +1,15 @@
-function plugin(UIkit) {
+function plugin(ngkit) {
 
     if (plugin.installed) {
         return;
     }
 
-    UIkit.icon.add(ICONS);
+    ngkit.icon.add(ICONS);
 
 }
 
-if (typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin);
+if (typeof window !== 'undefined' && window.ngkit) {
+    window.ngkit.use(plugin);
 }
 
 export default plugin;

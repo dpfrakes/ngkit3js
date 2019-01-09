@@ -1,6 +1,6 @@
 import FlexBug from '../mixin/flex-bug';
 import {getRows} from './margin';
-import {$$, boxModelAdjust, css, offset, toFloat} from 'uikit-util';
+import {$$, boxModelAdjust, css, offset, toFloat} from 'ngkit-util';
 
 export default {
 

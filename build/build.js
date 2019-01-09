@@ -36,8 +36,8 @@ const components = glob.sync('src/js/components/*.js').reduce((components, file)
         return util.compile( __dirname + '/componentWrapper.js', `dist/${file.substring(4, file.length - 3)}`, {
             name,
             minify,
-            external: ['uikit', 'uikit-util'],
-            globals: {uikit: 'UIkit', 'uikit-util': 'UIkit.util'},
+            external: ['ngkit', 'ngkit-util'],
+            globals: {ngkit: 'ngkit', 'ngkit-util': 'ngkit.util'},
             aliases: {component: path.join(__dirname, '..', file.substr(0, file.length - 3))},
             replaces: {NAME: `'${camelize(name)}'`}
         });
@@ -48,14 +48,13 @@ const components = glob.sync('src/js/components/*.js').reduce((components, file)
 
 const steps = {
 
-    core: () => util.compile('src/js/uikit-core.js', 'dist/js/uikit-core', {minify}),
-    uikit: () => util.compile('src/js/uikit.js', 'dist/js/uikit', {minify, bundled: true}),
-    icons: () => util.icons('{src/images,custom}/icons/*.svg').then(ICONS => util.compile('src/js/icons.js', 'dist/js/uikit-icons', {
+    core: () => util.compile('src/js/ngkit-core.js', 'dist/js/ngkit-core', {minify}),
+    ngkit: () => util.compile('src/js/ngkit.js', 'dist/js/ngkit', {minify, bundled: true}),
+    icons: () => util.icons('{src/images,custom}/icons/*.svg').then(ICONS => util.compile('src/js/icons.js', 'dist/js/ngkit-icons', {
         minify,
         name: 'icons',
         replaces: {ICONS}
-    })),
-    tests: () => util.compile('tests/js/index.js', 'tests/js/test', {minify, name: 'test'})
+    }))
 
 };
 
@@ -68,9 +67,9 @@ if (argv.h || argv.help) {
 
         examples:
 
-        build.js // builds all of uikit, including icons and does minification (implies 'all')
-        build.js uikit icons -d // builds all of uikit and the icons, skipping the minification
-        build.js core lightbox -d // builds uikit-core and the lightbox, skipping the minification
+        build.js // builds all of ngkit, including icons and does minification (implies 'all')
+        build.js ngkit icons -d // builds all of ngkit and the icons, skipping the minification
+        build.js core lightbox -d // builds ngkit-core and the lightbox, skipping the minification
 
         available components:
 

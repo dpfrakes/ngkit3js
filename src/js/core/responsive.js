@@ -1,11 +1,11 @@
-import {addClass, Dimensions, height, isVisible, width} from 'uikit-util';
+import {addClass, Dimensions, height, isVisible, width} from 'ngkit-util';
 
 export default {
 
     props: ['width', 'height'],
 
     connected() {
-        addClass(this.$el, 'uk-responsive-width');
+        addClass(this.$el, 'ng-responsive-width');
     },
 
     update: {

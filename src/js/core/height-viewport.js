@@ -1,5 +1,5 @@
 import FlexBug from '../mixin/flex-bug';
-import {boxModelAdjust, css, endsWith, height, isNumeric, isString, offset, query, toFloat} from 'uikit-util';
+import {boxModelAdjust, css, endsWith, height, isNumeric, isString, offset, query, toFloat} from 'ngkit-util';
 
 export default {
 

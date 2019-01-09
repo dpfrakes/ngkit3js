@@ -1,4 +1,4 @@
-import {isInView} from 'uikit-util';
+import {isInView} from 'ngkit-util';
 
 // Deprecated
 export default {

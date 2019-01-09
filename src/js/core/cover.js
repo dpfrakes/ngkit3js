@@ -1,6 +1,6 @@
 import Video from './video';
 import Class from '../mixin/class';
-import {css, Dimensions, isVisible} from 'uikit-util';
+import {css, Dimensions, isVisible} from 'ngkit-util';
 
 export default {
 

@@ -1,4 +1,4 @@
-import {isRtl, isVisible, offsetPosition, toggleClass} from 'uikit-util';
+import {isRtl, isVisible, offsetPosition, toggleClass} from 'ngkit-util';
 
 export default {
 
@@ -8,8 +8,8 @@ export default {
     },
 
     data: {
-        margin: 'uk-margin-small-top',
-        firstColumn: 'uk-first-column'
+        margin: 'ng-margin-small-top',
+        firstColumn: 'ng-first-column'
     },
 
     update: {

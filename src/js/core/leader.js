@@ -1,6 +1,6 @@
 import Class from '../mixin/class';
 import Media from '../mixin/media';
-import {attr, getCssVar, toggleClass, unwrap, wrapInner} from 'uikit-util';
+import {attr, getCssVar, toggleClass, unwrap, wrapInner} from 'ngkit-util';
 
 export default {
 
@@ -12,8 +12,8 @@ export default {
 
     data: {
         fill: '',
-        clsWrapper: 'uk-leader-fill',
-        clsHide: 'uk-leader-hide',
+        clsWrapper: 'ng-leader-fill',
+        clsHide: 'ng-leader-hide',
         attrFill: 'data-fill'
     },
 

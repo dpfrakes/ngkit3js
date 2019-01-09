@@ -16,7 +16,7 @@ import slidenavPrevious from '../../images/components/slidenav-previous.svg';
 import slidenavPreviousLarge from '../../images/components/slidenav-previous-large.svg';
 import spinner from '../../images/components/spinner.svg';
 import totop from '../../images/components/totop.svg';
-import {$, addClass, apply, css, each, hasClass, hyphenate, isRtl, isString, noop, parents, Promise, swap} from 'uikit-util';
+import {$, addClass, apply, css, each, hasClass, hyphenate, isRtl, isString, noop, parents, Promise, swap} from 'ngkit-util';
 
 const parsed = {};
 const icons = {
@@ -55,7 +55,7 @@ const Icon = {
     isIcon: true,
 
     connected() {
-        addClass(this.$el, 'uk-icon');
+        addClass(this.$el, 'ng-icon');
     },
 
     methods: {
@@ -92,13 +92,13 @@ export const Slidenav = {
     extends: IconComponent,
 
     connected() {
-        addClass(this.$el, 'uk-slidenav');
+        addClass(this.$el, 'ng-slidenav');
     },
 
     computed: {
 
         icon({icon}, $el) {
-            return hasClass($el, 'uk-slidenav-large')
+            return hasClass($el, 'ng-slidenav-large')
                 ? `${icon}-large`
                 : icon;
         }
@@ -114,9 +114,9 @@ export const Search = {
     computed: {
 
         icon({icon}, $el) {
-            return hasClass($el, 'uk-search-icon') && parents($el, '.uk-search-large').length
+            return hasClass($el, 'ng-search-icon') && parents($el, '.ng-search-large').length
                 ? 'search-large'
-                : parents($el, '.uk-search-navbar').length
+                : parents($el, '.ng-search-navbar').length
                     ? 'search-navbar'
                     : icon;
         }
@@ -132,7 +132,7 @@ export const Close = {
     computed: {
 
         icon() {
-            return `close-${hasClass(this.$el, 'uk-close-large') ? 'large' : 'icon'}`;
+            return `close-${hasClass(this.$el, 'ng-close-large') ? 'large' : 'icon'}`;
         }
 
     }
@@ -149,8 +149,8 @@ export const Spinner = {
 
 };
 
-function install(UIkit) {
-    UIkit.icon.add = (name, svg) => {
+function install(ngkit) {
+    ngkit.icon.add = (name, svg) => {
 
         const added = isString(name) ? ({[name]: svg}) : name;
         each(added, (svg, name) => {
@@ -158,9 +158,9 @@ function install(UIkit) {
             delete parsed[name];
         });
 
-        if (UIkit._initialized) {
+        if (ngkit._initialized) {
             apply(document.body, el =>
-                each(UIkit.getComponents(el), cmp =>
+                each(ngkit.getComponents(el), cmp =>
                     cmp.$options.isIcon && cmp.icon in added && cmp.$reset()
                 )
             );

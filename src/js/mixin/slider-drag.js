@@ -1,4 +1,4 @@
-import {getPos, includes, isRtl, isTouch, off, on, pointerDown, pointerMove, pointerUp, preventClick, trigger} from 'uikit-util';
+import {getPos, includes, isRtl, isTouch, off, on, pointerDown, pointerMove, pointerUp, preventClick, trigger} from 'ngkit-util';
 
 export default {
 

@@ -1,10 +1,10 @@
-import {hyphenate, remove, within} from 'uikit-util';
+import {hyphenate, remove, within} from 'ngkit-util';
 
-export default function (UIkit) {
+export default function (ngkit) {
 
-    const DATA = UIkit.data;
+    const DATA = ngkit.data;
 
-    UIkit.prototype.$mount = function (el) {
+    ngkit.prototype.$mount = function (el) {
 
         const {name} = this.$options;
 
@@ -25,16 +25,16 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype.$emit = function (e) {
+    ngkit.prototype.$emit = function (e) {
         this._callUpdate(e);
     };
 
-    UIkit.prototype.$reset = function () {
+    ngkit.prototype.$reset = function () {
         this._callDisconnected();
         this._callConnected();
     };
 
-    UIkit.prototype.$destroy = function (removeEl = false) {
+    ngkit.prototype.$destroy = function (removeEl = false) {
 
         const {el, name} = this.$options;
 
@@ -59,17 +59,17 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype.$create = function (component, element, data) {
-        return UIkit[component](element, data);
+    ngkit.prototype.$create = function (component, element, data) {
+        return ngkit[component](element, data);
     };
 
-    UIkit.prototype.$update = UIkit.update;
-    UIkit.prototype.$getComponent = UIkit.getComponent;
+    ngkit.prototype.$update = ngkit.update;
+    ngkit.prototype.$getComponent = ngkit.getComponent;
 
     const names = {};
-    Object.defineProperties(UIkit.prototype, {
+    Object.defineProperties(ngkit.prototype, {
 
-        $container: Object.getOwnPropertyDescriptor(UIkit, 'container'),
+        $container: Object.getOwnPropertyDescriptor(ngkit, 'container'),
 
         $name: {
 
@@ -77,7 +77,7 @@ export default function (UIkit) {
                 const {name} = this.$options;
 
                 if (!names[name]) {
-                    names[name] = UIkit.prefix + hyphenate(name);
+                    names[name] = ngkit.prefix + hyphenate(name);
                 }
 
                 return names[name];

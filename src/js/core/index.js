@@ -1,5 +1,7 @@
 import Accordion from './accordion';
 import Alert from './alert';
+import ButtonRadio from './button-radio';
+import ButtonCheckbox from './button-checkbox';
 import Core from './core';
 import Cover from './cover';
 import Drop from './drop';
@@ -29,53 +31,55 @@ import Tab from './tab';
 import Toggle from './toggle';
 import Video from './video';
 
-export default function (UIkit) {
+export default function (ngkit) {
 
     // core components
-    UIkit.component('accordion', Accordion);
-    UIkit.component('alert', Alert);
-    UIkit.component('cover', Cover);
-    UIkit.component('drop', Drop);
-    UIkit.component('dropdown', Dropdown);
-    UIkit.component('formCustom', FormCustom);
-    UIkit.component('gif', Gif);
-    UIkit.component('grid', Grid);
-    UIkit.component('heightMatch', HeightMatch);
-    UIkit.component('heightViewport', HeightViewport);
-    UIkit.component('icon', Icon);
-    UIkit.component('img', Img);
-    UIkit.component('leader', Leader);
-    UIkit.component('margin', Margin);
-    UIkit.component('modal', Modal);
-    UIkit.component('nav', Nav);
-    UIkit.component('navbar', Navbar);
-    UIkit.component('offcanvas', Offcanvas);
-    UIkit.component('overflowAuto', OverflowAuto);
-    UIkit.component('responsive', Responsive);
-    UIkit.component('scroll', Scroll);
-    UIkit.component('scrollspy', Scrollspy);
-    UIkit.component('scrollspyNav', ScrollspyNav);
-    UIkit.component('sticky', Sticky);
-    UIkit.component('svg', Svg);
-    UIkit.component('switcher', Switcher);
-    UIkit.component('tab', Tab);
-    UIkit.component('toggle', Toggle);
-    UIkit.component('video', Video);
+    ngkit.component('accordion', Accordion);
+    ngkit.component('alert', Alert);
+    ngkit.component('buttonRadio', ButtonRadio);
+    ngkit.component('buttonCheckbox', ButtonCheckbox);
+    ngkit.component('cover', Cover);
+    ngkit.component('drop', Drop);
+    ngkit.component('dropdown', Dropdown);
+    ngkit.component('formCustom', FormCustom);
+    ngkit.component('gif', Gif);
+    ngkit.component('grid', Grid);
+    ngkit.component('heightMatch', HeightMatch);
+    ngkit.component('heightViewport', HeightViewport);
+    ngkit.component('icon', Icon);
+    ngkit.component('img', Img);
+    ngkit.component('leader', Leader);
+    ngkit.component('margin', Margin);
+    ngkit.component('modal', Modal);
+    ngkit.component('nav', Nav);
+    ngkit.component('navbar', Navbar);
+    ngkit.component('offcanvas', Offcanvas);
+    ngkit.component('overflowAuto', OverflowAuto);
+    ngkit.component('responsive', Responsive);
+    ngkit.component('scroll', Scroll);
+    ngkit.component('scrollspy', Scrollspy);
+    ngkit.component('scrollspyNav', ScrollspyNav);
+    ngkit.component('sticky', Sticky);
+    ngkit.component('svg', Svg);
+    ngkit.component('switcher', Switcher);
+    ngkit.component('tab', Tab);
+    ngkit.component('toggle', Toggle);
+    ngkit.component('video', Video);
 
     // Icon components
-    UIkit.component('close', Close);
-    UIkit.component('marker', IconComponent);
-    UIkit.component('navbarToggleIcon', IconComponent);
-    UIkit.component('overlayIcon', IconComponent);
-    UIkit.component('paginationNext', IconComponent);
-    UIkit.component('paginationPrevious', IconComponent);
-    UIkit.component('searchIcon', Search);
-    UIkit.component('slidenavNext', Slidenav);
-    UIkit.component('slidenavPrevious', Slidenav);
-    UIkit.component('spinner', Spinner);
-    UIkit.component('totop', IconComponent);
+    ngkit.component('close', Close);
+    ngkit.component('marker', IconComponent);
+    ngkit.component('navbarToggleIcon', IconComponent);
+    ngkit.component('overlayIcon', IconComponent);
+    ngkit.component('paginationNext', IconComponent);
+    ngkit.component('paginationPrevious', IconComponent);
+    ngkit.component('searchIcon', Search);
+    ngkit.component('slidenavNext', Slidenav);
+    ngkit.component('slidenavPrevious', Slidenav);
+    ngkit.component('spinner', Spinner);
+    ngkit.component('totop', IconComponent);
 
     // core functionality
-    UIkit.use(Core);
+    ngkit.use(Core);
 
 }

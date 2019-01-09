@@ -1,4 +1,4 @@
-import {$$, addClass, css, data, filter, isInView, Promise, removeClass, toggleClass, trigger} from 'uikit-util';
+import {$$, addClass, css, data, filter, isInView, Promise, removeClass, toggleClass, trigger} from 'ngkit-util';
 
 export default {
 
@@ -22,7 +22,7 @@ export default {
         offsetLeft: 0,
         repeat: false,
         delay: 0,
-        inViewClass: 'uk-scrollspy-inview'
+        inViewClass: 'ng-scrollspy-inview'
     }),
 
     computed: {
@@ -58,7 +58,7 @@ export default {
                     let elData = els[i];
 
                     if (!elData || elData.el !== el) {
-                        const cls = data(el, 'uk-scrollspy-class');
+                        const cls = data(el, 'ng-scrollspy-class');
                         elData = {el, toggles: cls && cls.split(',') || this.cls};
                     }
 

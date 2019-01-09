@@ -1,5 +1,5 @@
 import Class from '../mixin/class';
-import {closest, css, height, offset, toFloat, trigger} from 'uikit-util';
+import {closest, css, height, offset, toFloat, trigger} from 'ngkit-util';
 
 export default {
 
@@ -11,8 +11,8 @@ export default {
     },
 
     data: {
-        selContainer: '.uk-modal',
-        selContent: '.uk-modal-dialog',
+        selContainer: '.ng-modal',
+        selContent: '.ng-modal-dialog',
     },
 
     computed: {

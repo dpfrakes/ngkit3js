@@ -1,4 +1,4 @@
-import {addClass, hasClass} from 'uikit-util';
+import {addClass, hasClass} from 'ngkit-util';
 
 export default {
 

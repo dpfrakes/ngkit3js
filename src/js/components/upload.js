@@ -1,4 +1,4 @@
-import {addClass, ajax, matches, noop, on, removeClass, trigger} from 'uikit-util';
+import {addClass, ajax, matches, noop, on, removeClass, trigger} from 'ngkit-util';
 
 export default {
 
@@ -21,7 +21,7 @@ export default {
 
     data: {
         allow: false,
-        clsDragover: 'uk-dragover',
+        clsDragover: 'ng-dragover',
         concurrent: 1,
         maxSize: 0,
         method: 'POST',

@@ -1,6 +1,6 @@
 import Class from '../mixin/class';
 import Media from '../mixin/media';
-import {$, addClass, after, Animation, assign, attr, css, fastdom, hasClass, height, isNumeric, isString, isVisible, noop, offset, offsetPosition, query, remove, removeClass, replaceClass, scrollTop, toFloat, toggleClass, trigger, within} from 'uikit-util';
+import {$, addClass, after, Animation, assign, attr, css, fastdom, hasClass, height, isNumeric, isString, isVisible, noop, offset, offsetPosition, query, remove, removeClass, replaceClass, scrollTop, toFloat, toggleClass, trigger, within} from 'ngkit-util';
 
 export default {
 
@@ -26,10 +26,10 @@ export default {
         bottom: false,
         offset: 0,
         animation: '',
-        clsActive: 'uk-active',
+        clsActive: 'ng-active',
         clsInactive: '',
-        clsFixed: 'uk-sticky-fixed',
-        clsBelow: 'uk-sticky-below',
+        clsFixed: 'ng-sticky-fixed',
+        clsBelow: 'ng-sticky-below',
         selTarget: '',
         widthElement: false,
         showOnUp: false,
@@ -67,7 +67,7 @@ export default {
     },
 
     connected() {
-        this.placeholder = $('+ .uk-sticky-placeholder', this.$el) || $('<div class="uk-sticky-placeholder"></div>');
+        this.placeholder = $('+ .ng-sticky-placeholder', this.$el) || $('<div class="ng-sticky-placeholder"></div>');
         this.isFixed = false;
         this.isActive = false;
     },

@@ -1,8 +1,8 @@
-import {assign, createEvent, fastdom, includes, isPlainObject} from 'uikit-util';
+import {assign, createEvent, fastdom, includes, isPlainObject} from 'ngkit-util';
 
-export default function (UIkit) {
+export default function (ngkit) {
 
-    UIkit.prototype._callHook = function (hook) {
+    ngkit.prototype._callHook = function (hook) {
 
         const handlers = this.$options[hook];
 
@@ -11,7 +11,7 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype._callConnected = function () {
+    ngkit.prototype._callConnected = function () {
 
         if (this._connected) {
             return;
@@ -30,7 +30,7 @@ export default function (UIkit) {
         this._callUpdate();
     };
 
-    UIkit.prototype._callDisconnected = function () {
+    ngkit.prototype._callDisconnected = function () {
 
         if (!this._connected) {
             return;
@@ -50,7 +50,7 @@ export default function (UIkit) {
 
     };
 
-    UIkit.prototype._callUpdate = function (e) {
+    ngkit.prototype._callUpdate = function (e) {
 
         e = createEvent(e || 'update');
 

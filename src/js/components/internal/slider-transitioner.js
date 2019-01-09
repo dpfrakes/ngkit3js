@@ -1,5 +1,5 @@
 import {translate} from '../../mixin/internal/slideshow-animations';
-import {clamp, createEvent, css, Deferred, includes, index, isRtl, noop, position, sortBy, toNodes, Transition, trigger} from 'uikit-util';
+import {clamp, createEvent, css, Deferred, includes, index, isRtl, noop, position, sortBy, toNodes, Transition, trigger} from 'ngkit-util';
 
 export default function (prev, next, dir, {center, easing, list}) {
 

@@ -1,5 +1,5 @@
 import Togglable from '../mixin/togglable';
-import {$$, addClass, attr, data, filter, getIndex, hasClass, index, isTouch, matches, queryAll, removeClass} from 'uikit-util';
+import {$$, addClass, attr, data, filter, getIndex, hasClass, index, isTouch, matches, queryAll, removeClass} from 'ngkit-util';
 
 export default {
 
@@ -15,13 +15,13 @@ export default {
     },
 
     data: {
-        connect: '~.uk-switcher',
+        connect: '~.ng-switcher',
         toggle: '> *',
         active: 0,
         swiping: true,
-        cls: 'uk-active',
-        clsContainer: 'uk-switcher',
-        attrItem: 'uk-switcher-item',
+        cls: 'ng-active',
+        clsContainer: 'ng-switcher',
+        attrItem: 'ng-switcher-item',
         queued: true
     },
 
@@ -44,7 +44,7 @@ export default {
             name: 'click',
 
             delegate() {
-                return `${this.toggle}:not(.uk-disabled)`;
+                return `${this.toggle}:not(.ng-disabled)`;
             },
 
             handler(e) {
@@ -119,7 +119,7 @@ export default {
             let toggle, next = getIndex(item, this.toggles, prev);
 
             for (let i = 0; i < length; i++, next = (next + dir + length) % length) {
-                if (!matches(this.toggles[next], '.uk-disabled, [disabled]')) {
+                if (!matches(this.toggles[next], '.ng-disabled, [disabled]')) {
                     toggle = this.toggles[next];
                     break;
                 }

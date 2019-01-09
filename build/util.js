@@ -12,7 +12,7 @@ const buble = require('rollup-plugin-buble');
 const replace = require('rollup-plugin-replace');
 const alias = require('rollup-plugin-import-alias');
 const {version} = require('../package.json');
-const banner = `/*! UIkit ${version} | http://www.getuikit.com | (c) 2014 - 2018 YOOtheme | MIT License */\n`;
+const banner = `/*! NGkit ${version} | http://www.getuikit.com | (c) 2014 - 2018 YOOtheme | MIT License */\n`;
 
 exports.banner = banner;
 exports.validClassName = /[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/;
@@ -96,7 +96,7 @@ exports.compile = async function (file, dest, {external, globals, name, aliases,
             }, replaces)),
             alias({
                 Paths: Object.assign({
-                    'uikit-util': './src/js/util/index',
+                    'ngkit-util': './src/js/util/index',
                 }, aliases),
                 Extensions: ['js', 'json']
             }),
@@ -115,8 +115,8 @@ exports.compile = async function (file, dest, {external, globals, name, aliases,
         globals,
         format: 'umd',
         banner: exports.banner,
-        amd: {id: `UIkit${name}`.toLowerCase()},
-        name: `UIkit${exports.ucfirst(name)}`,
+        amd: {id: `ngkit${name}`.toLowerCase()},
+        name: `NGkit${exports.ucfirst(name)}`,
         sourcemap: !minify ? 'inline' : false
     });
 

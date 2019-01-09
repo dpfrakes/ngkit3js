@@ -1,5 +1,5 @@
 import Modal from '../mixin/modal';
-import {$, addClass, assign, css, hasClass, height, html, isString, on, Promise, removeClass} from 'uikit-util';
+import {$, addClass, assign, css, hasClass, height, html, isString, on, Promise, removeClass} from 'ngkit-util';
 
 export default {
 
@@ -8,9 +8,9 @@ export default {
     mixins: [Modal],
 
     data: {
-        clsPage: 'uk-modal-page',
-        selPanel: '.uk-modal-dialog',
-        selClose: '.uk-modal-close, .uk-modal-close-default, .uk-modal-close-outside, .uk-modal-close-full'
+        clsPage: 'ng-modal-page',
+        selPanel: '.ng-modal-dialog',
+        selClose: '.ng-modal-close, .ng-modal-close-default, .ng-modal-close-outside, .ng-modal-close-full'
     },
 
     events: [
@@ -22,8 +22,8 @@ export default {
 
             handler() {
 
-                if (hasClass(this.panel, 'uk-margin-auto-vertical')) {
-                    addClass(this.$el, 'uk-flex');
+                if (hasClass(this.panel, 'ng-margin-auto-vertical')) {
+                    addClass(this.$el, 'ng-flex');
                 } else {
                     css(this.$el, 'display', 'block');
                 }
@@ -40,7 +40,7 @@ export default {
             handler() {
 
                 css(this.$el, 'display', '');
-                removeClass(this.$el, 'uk-flex');
+                removeClass(this.$el, 'ng-flex');
 
             }
         }
@@ -49,13 +49,13 @@ export default {
 
 };
 
-function install (UIkit) {
+function install (ngkit) {
 
-    UIkit.modal.dialog = function (content, options) {
+    ngkit.modal.dialog = function (content, options) {
 
-        const dialog = UIkit.modal(`
-            <div class="uk-modal">
-                <div class="uk-modal-dialog">${content}</div>
+        const dialog = ngkit.modal(`
+            <div class="ng-modal">
+                <div class="ng-modal-dialog">${content}</div>
              </div>
         `, options);
 
@@ -70,32 +70,32 @@ function install (UIkit) {
         return dialog;
     };
 
-    UIkit.modal.alert = function (message, options) {
+    ngkit.modal.alert = function (message, options) {
 
-        options = assign({bgClose: false, escClose: false, labels: UIkit.modal.labels}, options);
+        options = assign({bgClose: false, escClose: false, labels: ngkit.modal.labels}, options);
 
         return new Promise(
-            resolve => on(UIkit.modal.dialog(`
-                <div class="uk-modal-body">${isString(message) ? message : html(message)}</div>
-                <div class="uk-modal-footer uk-text-right">
-                    <button class="uk-button uk-button-primary uk-modal-close" autofocus>${options.labels.ok}</button>
+            resolve => on(ngkit.modal.dialog(`
+                <div class="ng-modal-body">${isString(message) ? message : html(message)}</div>
+                <div class="ng-modal-footer ng-text-right">
+                    <button class="ng-button ng-button-primary ng-modal-close" autofocus>${options.labels.ok}</button>
                 </div>
             `, options).$el, 'hide', resolve)
         );
     };
 
-    UIkit.modal.confirm = function (message, options) {
+    ngkit.modal.confirm = function (message, options) {
 
-        options = assign({bgClose: false, escClose: true, labels: UIkit.modal.labels}, options);
+        options = assign({bgClose: false, escClose: true, labels: ngkit.modal.labels}, options);
 
         return new Promise((resolve, reject) => {
 
-            const confirm = UIkit.modal.dialog(`
+            const confirm = ngkit.modal.dialog(`
                 <form>
-                    <div class="uk-modal-body">${isString(message) ? message : html(message)}</div>
-                    <div class="uk-modal-footer uk-text-right">
-                        <button class="uk-button uk-button-default uk-modal-close" type="button">${options.labels.cancel}</button>
-                        <button class="uk-button uk-button-primary" autofocus>${options.labels.ok}</button>
+                    <div class="ng-modal-body">${isString(message) ? message : html(message)}</div>
+                    <div class="ng-modal-footer ng-text-right">
+                        <button class="ng-button ng-button-default ng-modal-close" type="button">${options.labels.cancel}</button>
+                        <button class="ng-button ng-button-primary" autofocus>${options.labels.ok}</button>
                     </div>
                 </form>
             `, options);
@@ -117,21 +117,21 @@ function install (UIkit) {
         });
     };
 
-    UIkit.modal.prompt = function (message, value, options) {
+    ngkit.modal.prompt = function (message, value, options) {
 
-        options = assign({bgClose: false, escClose: true, labels: UIkit.modal.labels}, options);
+        options = assign({bgClose: false, escClose: true, labels: ngkit.modal.labels}, options);
 
         return new Promise(resolve => {
 
-            const prompt = UIkit.modal.dialog(`
-                    <form class="uk-form-stacked">
-                        <div class="uk-modal-body">
+            const prompt = ngkit.modal.dialog(`
+                    <form class="ng-form-stacked">
+                        <div class="ng-modal-body">
                             <label>${isString(message) ? message : html(message)}</label>
-                            <input class="uk-input" autofocus>
+                            <input class="ng-input" autofocus>
                         </div>
-                        <div class="uk-modal-footer uk-text-right">
-                            <button class="uk-button uk-button-default uk-modal-close" type="button">${options.labels.cancel}</button>
-                            <button class="uk-button uk-button-primary">${options.labels.ok}</button>
+                        <div class="ng-modal-footer ng-text-right">
+                            <button class="ng-button ng-button-default ng-modal-close" type="button">${options.labels.cancel}</button>
+                            <button class="ng-button ng-button-primary">${options.labels.ok}</button>
                         </div>
                     </form>
                 `, options),
@@ -156,7 +156,7 @@ function install (UIkit) {
         });
     };
 
-    UIkit.modal.labels = {
+    ngkit.modal.labels = {
         ok: 'Ok',
         cancel: 'Cancel'
     };

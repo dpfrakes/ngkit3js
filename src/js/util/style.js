@@ -70,16 +70,16 @@ export function getCssVar(name) {
     const docEl = document.documentElement;
 
     if (!isIE) {
-        return getStyles(docEl).getPropertyValue(`--uk-${name}`);
+        return getStyles(docEl).getPropertyValue(`--ng-${name}`);
     }
 
     if (!(name in vars)) {
 
-        /* usage in css: .uk-name:before { content:"xyz" } */
+        /* usage in css: .ng-name:before { content:"xyz" } */
 
         const element = append(docEl, document.createElement('div'));
 
-        addClass(element, `uk-${name}`);
+        addClass(element, `ng-${name}`);
 
         vars[name] = getStyle(element, 'content', ':before').replace(/^["'](.*)["']$/, '$1');
 

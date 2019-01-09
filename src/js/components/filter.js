@@ -1,5 +1,5 @@
 import Animate from '../mixin/animate';
-import {$$, $, append, assign, css, data, each, hasClass, includes, isUndefined, matches, parseOptions, toggleClass, toNodes, trigger} from 'uikit-util';
+import {$$, $, append, assign, css, data, each, hasClass, includes, isUndefined, matches, parseOptions, toggleClass, toNodes, trigger} from 'ngkit-util';
 
 export default {
 
@@ -15,8 +15,8 @@ export default {
     data: {
         target: null,
         selActive: false,
-        attrItem: 'uk-filter-control',
-        cls: 'uk-active',
+        attrItem: 'ng-filter-control',
+        cls: 'ng-active',
         animation: 250
     },
 

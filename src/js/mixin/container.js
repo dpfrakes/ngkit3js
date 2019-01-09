@@ -1,4 +1,4 @@
-import {$} from 'uikit-util';
+import {$} from 'ngkit-util';
 
 export default {
 

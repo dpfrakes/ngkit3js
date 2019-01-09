@@ -1,4 +1,4 @@
-import {css} from 'uikit-util';
+import {css} from 'ngkit-util';
 
 export default {
 

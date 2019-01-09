@@ -1,5 +1,5 @@
 import Media from '../mixin/media';
-import {css, Dimensions, each, includes, isNumber, isUndefined, toFloat} from 'uikit-util';
+import {css, Dimensions, each, includes, isNumber, isUndefined, toFloat} from 'ngkit-util';
 
 const props = ['x', 'y', 'bgx', 'bgy', 'rotate', 'scale', 'color', 'backgroundColor', 'borderColor', 'opacity', 'blur', 'hue', 'grayscale', 'invert', 'saturate', 'sepia', 'fopacity'];
 

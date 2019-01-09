@@ -2,23 +2,19 @@
   "name": "uikit",
   "title": "UIkit",
   "description": "UIkit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.",
-  "version": "3.0.0-rc.25",
+  "version": "3.0.0-rc.26",
   "main": "dist/js/uikit.js",
   "style": "dist/css/uikit.css",
   "scripts": {
-    "build-scss": "make-dir src/scss/theme && make-dir src/scss/components && node build/scss",
-    "compile": "yarn compile-less && yarn compile-js",
+    "compile": "yarn compile-js",
     "compile-js": "node build/build",
-    "compile-less": "yarn icons && node build/less",
-    "compile-rtl": "yarn compile-less rtl",
     "icons": "node build/icons",
     "prefix": "node build/prefix",
     "scope": "node build/scope",
     "release": "node build/release",
     "watch": "npm-watch",
     "eslint": "eslint src/js",
-    "eslint-fix": "eslint --fix src/js",
-    "test": "webpack-dev-server --inline --hot --watchContentBase && open http://localhost:8080/tests/"
+    "eslint-fix": "eslint --fix src/js"
   },
   "repository": {
     "type": "git",
@@ -40,7 +36,7 @@
     "fs-extra": "7.0.1",
     "glob": "^7.1.2",
     "inquirer": "6.2.1",
-    "less": "^2.7.2",
+    "less": "^3.9.0",
     "make-dir-cli": "^1.0.0",
     "minimist": "^1.2.0",
     "npm-watch": "github:dasdeck/npm-watch#46a8a36c61cfd998ed53d27f62eaf79e11c395b4",
@@ -62,10 +58,9 @@
     "webpack-dev-server": "^3.1.10"
   },
   "watch": {
-    "compile-js": "src/js/**/*.js",
-    "compile-less": {
-      "patterns": "**/*.less",
-      "extensions": "less"
-    }
+    "compile-js": "src/js/**/*.js"
+  },
+  "dependencies": {
+    "yarn": "^1.12.3"
   }
 }

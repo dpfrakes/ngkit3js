@@ -1,7 +1,7 @@
 import SliderAutoplay from './slider-autoplay';
 import SliderDrag from './slider-drag';
 import SliderNav from './slider-nav';
-import {$, assign, clamp, fastdom, getIndex, hasClass, isNumber, isRtl, Promise, toNodes, trigger} from 'uikit-util';
+import {$, assign, clamp, fastdom, getIndex, hasClass, isNumber, isRtl, Promise, toNodes, trigger} from 'ngkit-util';
 
 export default {
 
@@ -22,7 +22,7 @@ export default {
         index: 0,
         stack: [],
         percent: 0,
-        clsActive: 'uk-active',
+        clsActive: 'ng-active',
         clsActivated: false,
         Transitioner: false,
         transitionOptions: {}

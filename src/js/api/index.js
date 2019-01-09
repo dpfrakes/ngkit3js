@@ -3,21 +3,21 @@ import hooksAPI from './hooks';
 import stateAPI from './state';
 import instanceAPI from './instance';
 import componentAPI from './component';
-import * as util from 'uikit-util';
+import * as util from 'ngkit-util';
 
-const UIkit = function (options) {
+const ngkit = function (options) {
     this._init(options);
 };
 
-UIkit.util = util;
-UIkit.data = '__uikit__';
-UIkit.prefix = 'uk-';
-UIkit.options = {};
+ngkit.util = util;
+ngkit.data = '__ngkit__';
+ngkit.prefix = 'ng-';
+ngkit.options = {};
 
-globalAPI(UIkit);
-hooksAPI(UIkit);
-stateAPI(UIkit);
-componentAPI(UIkit);
-instanceAPI(UIkit);
+globalAPI(ngkit);
+hooksAPI(ngkit);
+stateAPI(ngkit);
+componentAPI(ngkit);
+instanceAPI(ngkit);
 
-export default UIkit;
+export default ngkit;

@@ -1,5 +1,5 @@
 import Parallax from '../mixin/parallax';
-import {css, endsWith, noop, query, Transition} from 'uikit-util';
+import {css, endsWith, noop, query, Transition} from 'ngkit-util';
 
 export default {
 

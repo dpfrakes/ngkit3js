@@ -2,7 +2,7 @@ import Class from '../mixin/class';
 import Slider, {speedUp} from '../mixin/slider';
 import SliderReactive from '../mixin/slider-reactive';
 import Transitioner, {bounds, getElLeft, getWidth, getMax, getMaxWidth} from './internal/slider-transitioner';
-import {$, $$, addClass, css, data, includes, isNumeric, isUndefined, toggleClass, toFloat} from 'uikit-util';
+import {$, $$, addClass, css, data, includes, isNumeric, isUndefined, toggleClass, toFloat} from 'ngkit-util';
 
 export default {
 
@@ -16,10 +16,10 @@ export default {
     data: {
         center: false,
         sets: false,
-        attrItem: 'uk-slider-item',
-        selList: '.uk-slider-items',
-        selNav: '.uk-slider-nav',
-        clsContainer: 'uk-slider-container',
+        attrItem: 'ng-slider-item',
+        selList: '.ng-slider-items',
+        selNav: '.ng-slider-nav',
+        clsContainer: 'ng-slider-container',
         Transitioner
     },
 
@@ -119,7 +119,7 @@ export default {
 
             $$(`[${this.attrItem}],[data-${this.attrItem}]`, this.$el).forEach(el => {
                 const index = data(el, this.attrItem);
-                this.maxIndex && toggleClass(el, 'uk-hidden', isNumeric(index) && (this.sets && !includes(this.sets, toFloat(index)) || index > this.maxIndex));
+                this.maxIndex && toggleClass(el, 'ng-hidden', isNumeric(index) && (this.sets && !includes(this.sets, toFloat(index)) || index > this.maxIndex));
             });
 
         },

@@ -20,8 +20,8 @@ module.exports = [
         entry: './src/js/uikit',
         output: {
             path: __dirname,
-            filename: 'dist/js/uikit.js',
-            library: 'UIkit',
+            filename: 'dist/js/ngkit.js',
+            library: 'NGkit',
             libraryExport: 'default',
             libraryTarget: 'umd'
         },
@@ -37,7 +37,7 @@ module.exports = [
         ],
         resolve: {
             alias: {
-                'uikit-util': resolve(__dirname, 'src/js/util')
+                'ngkit-util': resolve(__dirname, 'src/js/util')
             }
         }
     },
@@ -46,7 +46,7 @@ module.exports = [
         entry: './src/js/uikit',
         output: {
             path: __dirname,
-            filename: 'dist/js/uikit.min.js',
+            filename: 'dist/js/ngkit.min.js',
             library: 'UIkit',
             libraryExport: 'default',
             libraryTarget: 'umd'
@@ -63,7 +63,7 @@ module.exports = [
         ],
         resolve: {
             alias: {
-                'uikit-util': resolve(__dirname, 'src/js/util')
+                'ngkit-util': resolve(__dirname, 'src/js/util')
             }
         }
     },
@@ -72,7 +72,7 @@ module.exports = [
         entry: './src/js/icons',
         output: {
             path: __dirname,
-            filename: 'dist/js/uikit-icons.js',
+            filename: 'dist/js/ngkit-icons.js',
             library: 'UIkitIcons',
             libraryExport: 'default',
             libraryTarget: 'umd'
@@ -103,7 +103,7 @@ module.exports = [
         externals: {uikit: 'UIkit'},
         resolve: {
             alias: {
-                'uikit-util': resolve(__dirname, 'src/js/util')
+                'ngkit-util': resolve(__dirname, 'src/js/util')
             }
         }
     }

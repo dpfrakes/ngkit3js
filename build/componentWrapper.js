@@ -1,8 +1,8 @@
-/* global UIkit, NAME */
+/* global NGkit, NAME */
 import Component from 'component';
 
-if (typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.component(NAME, Component);
+if (typeof window !== 'undefined' && window.NGkit) {
+    window.NGkit.component(NAME, Component);
 }
 
 export default Component;

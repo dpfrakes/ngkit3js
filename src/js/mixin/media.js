@@ -1,4 +1,4 @@
-import {getCssVar, isString, toFloat} from 'uikit-util';
+import {getCssVar, isString, toFloat} from 'ngkit-util';
 
 export default {
 

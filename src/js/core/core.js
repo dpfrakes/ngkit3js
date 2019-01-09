@@ -1,25 +1,25 @@
-import {$$, addClass, css, hasTouch, on, ready, removeClass, toMs, within} from 'uikit-util';
+import {$$, addClass, css, hasTouch, on, ready, removeClass, toMs, within} from 'ngkit-util';
 
-export default function (UIkit) {
+export default function (ngkit) {
 
     ready(() => {
 
-        UIkit.update();
+        ngkit.update();
 
         let scroll = 0;
         let started = 0;
 
-        on(window, 'load resize', e => UIkit.update(null, e));
+        on(window, 'load resize', e => ngkit.update(null, e));
         on(window, 'scroll', e => {
             const {target} = e;
             e.dir = scroll <= window.pageYOffset ? 'down' : 'up';
             e.pageYOffset = scroll = window.pageYOffset;
-            UIkit.update(target.nodeType !== 1 ? document.body : target, e);
+            ngkit.update(target.nodeType !== 1 ? document.body : target, e);
         }, {passive: true, capture: true});
-        on(document, 'loadedmetadata load', ({target}) => UIkit.update(target, 'load'), true);
+        on(document, 'loadedmetadata load', ({target}) => ngkit.update(target, 'load'), true);
 
         on(document, 'animationstart', ({target}) => {
-            if ((css(target, 'animationName') || '').match(/^uk-.*(left|right)/)) {
+            if ((css(target, 'animationName') || '').match(/^ng-.*(left|right)/)) {
 
                 started++;
                 css(document.body, 'overflowX', 'hidden');
@@ -35,7 +35,7 @@ export default function (UIkit) {
             return;
         }
 
-        const cls = 'uk-hover';
+        const cls = 'ng-hover';
 
         on(document, 'tap', ({target}) =>
             $$(`.${cls}`).forEach(el =>
@@ -43,7 +43,7 @@ export default function (UIkit) {
             )
         );
 
-        Object.defineProperty(UIkit, 'hoverSelector', {
+        Object.defineProperty(ngkit, 'hoverSelector', {
 
             set(selector) {
                 on(document, 'tap', selector, ({current}) => addClass(current, cls));
@@ -51,7 +51,7 @@ export default function (UIkit) {
 
         });
 
-        UIkit.hoverSelector = '.uk-animation-toggle, .uk-transition-toggle, [uk-hover]';
+        ngkit.hoverSelector = '.ng-animation-toggle, .ng-transition-toggle, [ng-hover]';
 
     });
 

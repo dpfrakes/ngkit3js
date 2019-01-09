@@ -51,19 +51,19 @@ function compile(version) {
 }
 
 function createPackage(version) {
-    const file = `dist/uikit-${version}.zip`;
+    const file = `dist/ngkit-${version}.zip`;
     const output = fs.createWriteStream(file).on('close', () => util.logFile(file));
 
     const archive = archiver('zip');
 
     archive.pipe(output);
-    archive.file('dist/js/uikit.js', {name: '/js/uikit.js'});
-    archive.file('dist/js/uikit.min.js', {name: '/js/uikit.min.js'});
-    archive.file('dist/js/uikit-icons.js', {name: '/js/uikit-icons.js'});
-    archive.file('dist/js/uikit-icons.min.js', {name: '/js/uikit-icons.min.js'});
-    archive.file('dist/css/uikit.css', {name: '/css/uikit.css'});
-    archive.file('dist/css/uikit.min.css', {name: '/css/uikit.min.css'});
-    archive.file('dist/css/uikit-rtl.css', {name: '/css/uikit-rtl.css'});
-    archive.file('dist/css/uikit-rtl.min.css', {name: '/css/uikit-rtl.min.css'});
+    archive.file('dist/js/ngkit.js', {name: '/js/ngkit.js'});
+    archive.file('dist/js/ngkit.min.js', {name: '/js/ngkit.min.js'});
+    archive.file('dist/js/ngkit-icons.js', {name: '/js/ngkit-icons.js'});
+    archive.file('dist/js/ngkit-icons.min.js', {name: '/js/ngkit-icons.min.js'});
+    archive.file('dist/css/ngkit.css', {name: '/css/ngkit.css'});
+    archive.file('dist/css/ngkit.min.css', {name: '/css/ngkit.min.css'});
+    archive.file('dist/css/ngkit-rtl.css', {name: '/css/ngkit-rtl.css'});
+    archive.file('dist/css/ngkit-rtl.min.css', {name: '/css/ngkit-rtl.min.css'});
     archive.finalize();
 }

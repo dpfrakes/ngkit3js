@@ -1,10 +1,10 @@
-import {$, apply, createEvent, isString, mergeOptions, toNode} from 'uikit-util';
+import {$, apply, createEvent, isString, mergeOptions, toNode} from 'ngkit-util';
 
-export default function (UIkit) {
+export default function (ngkit) {
 
-    const DATA = UIkit.data;
+    const DATA = ngkit.data;
 
-    UIkit.use = function (plugin) {
+    ngkit.use = function (plugin) {
 
         if (plugin.installed) {
             return;
@@ -16,17 +16,17 @@ export default function (UIkit) {
         return this;
     };
 
-    UIkit.mixin = function (mixin, component) {
-        component = (isString(component) ? UIkit.component(component) : component) || this;
+    ngkit.mixin = function (mixin, component) {
+        component = (isString(component) ? ngkit.component(component) : component) || this;
         component.options = mergeOptions(component.options, mixin);
     };
 
-    UIkit.extend = function (options) {
+    ngkit.extend = function (options) {
 
         options = options || {};
 
         const Super = this;
-        const Sub = function UIkitComponent (options) {
+        const Sub = function ngkitComponent (options) {
             this._init(options);
         };
 
@@ -40,7 +40,7 @@ export default function (UIkit) {
         return Sub;
     };
 
-    UIkit.update = function (element, e) {
+    ngkit.update = function (element, e) {
 
         e = createEvent(e || 'update');
         element = element ? toNode(element) : document.body;
@@ -51,7 +51,7 @@ export default function (UIkit) {
     };
 
     let container;
-    Object.defineProperty(UIkit, 'container', {
+    Object.defineProperty(ngkit, 'container', {
 
         get() {
             return container || document.body;

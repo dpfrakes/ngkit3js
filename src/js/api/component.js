@@ -1,26 +1,26 @@
-import {$$, assign, camelize, fastdom, hyphenate, isPlainObject, startsWith} from 'uikit-util';
+import {$$, assign, camelize, fastdom, hyphenate, isPlainObject, startsWith} from 'ngkit-util';
 
-export default function (UIkit) {
+export default function (ngkit) {
 
-    const DATA = UIkit.data;
+    const DATA = ngkit.data;
 
     const components = {};
 
-    UIkit.component = function (name, options) {
+    ngkit.component = function (name, options) {
 
         if (!options) {
 
             if (isPlainObject(components[name])) {
-                components[name] = UIkit.extend(components[name]);
+                components[name] = ngkit.extend(components[name]);
             }
 
             return components[name];
 
         }
 
-        UIkit[name] = function (element, data) {
+        ngkit[name] = function (element, data) {
 
-            const component = UIkit.component(name);
+            const component = ngkit.component(name);
 
             if (isPlainObject(element)) {
                 return new component({data: element});
@@ -34,7 +34,7 @@ export default function (UIkit) {
 
             function init(element) {
 
-                const instance = UIkit.getComponent(element, name);
+                const instance = ngkit.getComponent(element, name);
 
                 if (instance) {
                     if (!data) {
@@ -55,21 +55,21 @@ export default function (UIkit) {
         opt.name = name;
 
         if (opt.install) {
-            opt.install(UIkit, opt, name);
+            opt.install(ngkit, opt, name);
         }
 
-        if (UIkit._initialized && !opt.functional) {
+        if (ngkit._initialized && !opt.functional) {
             const id = hyphenate(name);
-            fastdom.read(() => UIkit[name](`[uk-${id}],[data-uk-${id}]`));
+            fastdom.read(() => ngkit[name](`[ng-${id}],[data-ng-${id}]`));
         }
 
         return components[name] = isPlainObject(options) ? opt : options;
     };
 
-    UIkit.getComponents = element => element && element[DATA] || {};
-    UIkit.getComponent = (element, name) => UIkit.getComponents(element)[name];
+    ngkit.getComponents = element => element && element[DATA] || {};
+    ngkit.getComponent = (element, name) => ngkit.getComponents(element)[name];
 
-    UIkit.connect = node => {
+    ngkit.connect = node => {
 
         if (node[DATA]) {
             for (const name in node[DATA]) {
@@ -82,14 +82,14 @@ export default function (UIkit) {
             const name = getComponentName(node.attributes[i].name);
 
             if (name && name in components) {
-                UIkit[name](node);
+                ngkit[name](node);
             }
 
         }
 
     };
 
-    UIkit.disconnect = node => {
+    ngkit.disconnect = node => {
         for (const name in node[DATA]) {
             node[DATA][name]._callDisconnected();
         }
@@ -98,7 +98,7 @@ export default function (UIkit) {
 }
 
 export function getComponentName(attribute) {
-    return startsWith(attribute, 'uk-') || startsWith(attribute, 'data-uk-')
-        ? camelize(attribute.replace('data-uk-', '').replace('uk-', ''))
+    return startsWith(attribute, 'ng-') || startsWith(attribute, 'data-ng-')
+        ? camelize(attribute.replace('data-ng-', '').replace('ng-', ''))
         : false;
 }

@@ -1,4 +1,4 @@
-import {$, clamp, escape, height, offset, scrollTop, trigger} from 'uikit-util';
+import {$, clamp, escape, height, offset, scrollTop, trigger} from 'ngkit-util';
 
 export default {
 

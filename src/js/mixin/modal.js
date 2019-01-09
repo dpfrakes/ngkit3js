@@ -1,4 +1,4 @@
-import {$, addClass, append, css, hasClass, on, once, Promise, removeClass, toMs, width, within} from 'uikit-util';
+import {$, addClass, append, css, hasClass, on, once, Promise, removeClass, toMs, width, within} from 'ngkit-util';
 import Class from './class';
 import Container from './container';
 import Togglable from './togglable';
@@ -18,7 +18,7 @@ export default {
     },
 
     data: {
-        cls: 'uk-open',
+        cls: 'ng-open',
         escClose: true,
         bgClose: true,
         overlay: true,

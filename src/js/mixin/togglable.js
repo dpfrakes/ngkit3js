@@ -1,4 +1,4 @@
-import {$$, Animation, assign, attr, css, fastdom, hasAttr, hasClass, height, includes, isBoolean, isFunction, isUndefined, isVisible, noop, Promise, toFloat, toggleClass, toNodes, Transition, trigger} from 'uikit-util';
+import {$$, Animation, assign, attr, css, fastdom, hasAttr, hasClass, height, includes, isBoolean, isFunction, isUndefined, isVisible, noop, Promise, toFloat, toggleClass, toNodes, Transition, trigger} from 'ngkit-util';
 
 export default {
 
@@ -73,7 +73,7 @@ export default {
                     const {body} = document;
                     const scroll = body.scrollTop;
                     const [el] = toggled;
-                    const inProgress = Animation.inProgress(el) && hasClass(el, 'uk-animation-leave')
+                    const inProgress = Animation.inProgress(el) && hasClass(el, 'ng-animation-leave')
                             || Transition.inProgress(el) && el.style.height === '0px';
 
                     p = all(toggled);
@@ -115,7 +115,7 @@ export default {
             show = isBoolean(show)
                 ? show
                 : Animation.inProgress(el)
-                    ? hasClass(el, 'uk-animation-leave')
+                    ? hasClass(el, 'ng-animation-leave')
                     : Transition.inProgress(el)
                         ? el.style.height === '0px'
                         : !this.isToggled(el);

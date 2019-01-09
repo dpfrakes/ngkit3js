@@ -1,7 +1,7 @@
 import Container from '../mixin/container';
 import Togglable from '../mixin/togglable';
 import Position from '../mixin/position';
-import {append, attr, flipPosition, hasAttr, includes, isTouch, isVisible, matches, on, pointerDown, pointerEnter, pointerLeave, remove, within} from 'uikit-util';
+import {append, attr, flipPosition, hasAttr, includes, isTouch, isVisible, matches, on, pointerDown, pointerEnter, pointerLeave, remove, within} from 'ngkit-util';
 
 const actives = [];
 
@@ -20,10 +20,10 @@ export default {
         pos: 'top',
         title: '',
         delay: 0,
-        animation: ['uk-animation-scale-up'],
+        animation: ['ng-animation-scale-up'],
         duration: 100,
-        cls: 'uk-active',
-        clsPos: 'uk-tooltip'
+        cls: 'ng-active',
+        clsPos: 'ng-tooltip'
     },
 
     beforeConnect() {

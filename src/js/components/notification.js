@@ -1,4 +1,4 @@
-import {append, apply, closest, css, pointerEnter, pointerLeave, remove, startsWith, toFloat, Transition, trigger} from 'uikit-util';
+import {append, apply, closest, css, pointerEnter, pointerLeave, remove, startsWith, toFloat, Transition, trigger} from 'ngkit-util';
 
 const containers = {};
 
@@ -14,8 +14,8 @@ export default {
         timeout: 5000,
         group: null,
         pos: 'top-center',
-        clsClose: 'uk-notification-close',
-        clsMsg: 'uk-notification-message'
+        clsClose: 'ng-notification-close',
+        clsMsg: 'ng-notification-message'
     },
 
     install,
@@ -35,14 +35,14 @@ export default {
     created() {
 
         if (!containers[this.pos]) {
-            containers[this.pos] = append(this.$container, `<div class="uk-notification uk-notification-${this.pos}"></div>`);
+            containers[this.pos] = append(this.$container, `<div class="ng-notification ng-notification-${this.pos}"></div>`);
         }
 
         const container = css(containers[this.pos], 'display', 'block');
 
         this.$mount(append(container,
             `<div class="${this.clsMsg}${this.status ? ` ${this.clsMsg}-${this.status}` : ''}">
-                    <a href="#" class="${this.clsClose}" data-uk-close></a>
+                    <a href="#" class="${this.clsClose}" data-ng-close></a>
                     <div>${this.message}</div>
                 </div>`
         ));
@@ -116,10 +116,10 @@ export default {
 
 };
 
-function install(UIkit) {
-    UIkit.notification.closeAll = function (group, immediate) {
+function install(ngkit) {
+    ngkit.notification.closeAll = function (group, immediate) {
         apply(document.body, el => {
-            const notification = UIkit.getComponent(el, 'notification');
+            const notification = ngkit.getComponent(el, 'notification');
             if (notification && (!group || group === notification.group)) {
                 notification.close(immediate);
             }

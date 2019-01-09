@@ -1,4 +1,4 @@
-import {pointerDown} from 'uikit-util';
+import {pointerDown} from 'ngkit-util';
 
 export default {
 

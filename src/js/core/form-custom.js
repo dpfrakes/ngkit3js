@@ -1,5 +1,5 @@
 import Class from '../mixin/class';
-import {$, $$, includes, isInput, matches, query, selInput, toggleClass} from 'uikit-util';
+import {$, $$, includes, isInput, matches, query, selInput, toggleClass} from 'ngkit-util';
 
 export default {
 
@@ -69,7 +69,7 @@ export default {
                 if (current === this.input) {
                     toggleClass(
                         this.state,
-                        `uk-${includes(type, 'focus') ? 'focus' : 'hover'}`,
+                        `ng-${includes(type, 'focus') ? 'focus' : 'hover'}`,
                         includes(['focusin', 'mouseenter'], type)
                     );
                 }

@@ -1,4 +1,4 @@
-import {$, $$, addClass, closest, filter, height, isInView, offset, removeClass, trigger} from 'uikit-util';
+import {$, $$, addClass, closest, filter, height, isInView, offset, removeClass, trigger} from 'ngkit-util';
 
 export default {
 
@@ -11,7 +11,7 @@ export default {
     },
 
     data: {
-        cls: 'uk-active',
+        cls: 'ng-active',
         closest: false,
         scroll: false,
         overflow: true,

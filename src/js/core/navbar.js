@@ -1,6 +1,6 @@
 import Class from '../mixin/class';
 import FlexBug from '../mixin/flex-bug';
-import {$, $$, addClass, after, assign, css, height, includes, isRtl, isVisible, matches, noop, Promise, query, remove, toFloat, Transition, within} from 'uikit-util';
+import {$, $$, addClass, after, assign, css, height, includes, isRtl, isVisible, matches, noop, Promise, query, remove, toFloat, Transition, within} from 'ngkit-util';
 
 export default {
 
@@ -23,9 +23,9 @@ export default {
     },
 
     data: {
-        dropdown: '.uk-navbar-nav > li',
+        dropdown: '.ng-navbar-nav > li',
         align: !isRtl ? 'left' : 'right',
-        clsDrop: 'uk-navbar-dropdown',
+        clsDrop: 'ng-navbar-dropdown',
         mode: undefined,
         offset: undefined,
         delayShow: undefined,
@@ -38,7 +38,7 @@ export default {
         dropbarAnchor: false,
         duration: 200,
         forceHeight: true,
-        selMinHeight: '.uk-navbar-nav > li > a, .uk-navbar-item, .uk-navbar-toggle'
+        selMinHeight: '.ng-navbar-nav > li > a, .ng-navbar-item, .ng-navbar-toggle'
     },
 
     computed: {
@@ -65,14 +65,14 @@ export default {
 
         const {dropbar} = this.$props;
 
-        this.dropbar = dropbar && (query(dropbar, this.$el) || $('+ .uk-navbar-dropbar', this.$el) || $('<div></div>'));
+        this.dropbar = dropbar && (query(dropbar, this.$el) || $('+ .ng-navbar-dropbar', this.$el) || $('<div></div>'));
 
         if (this.dropbar) {
 
-            addClass(this.dropbar, 'uk-navbar-dropbar');
+            addClass(this.dropbar, 'ng-navbar-dropbar');
 
             if (this.dropbarMode === 'slide') {
-                addClass(this.dropbar, 'uk-navbar-dropbar-slide');
+                addClass(this.dropbar, 'ng-navbar-dropbar-slide');
             }
         }
 

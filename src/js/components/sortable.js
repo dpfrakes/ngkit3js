@@ -1,6 +1,6 @@
 import Animate from '../mixin/animate';
 import Class from '../mixin/class';
-import {$$, addClass, after, assign, append, attr, before, css, height, getPos, includes, index, isInput, offset, off, on, pointerDown, pointerMove, pointerUp, preventClick, remove, removeClass, scrollTop, toggleClass, toNodes, trigger, within} from 'uikit-util';
+import {$$, addClass, after, assign, append, attr, before, css, height, getPos, includes, index, isInput, offset, off, on, pointerDown, pointerMove, pointerUp, preventClick, remove, removeClass, scrollTop, toggleClass, toNodes, trigger, within} from 'ngkit-util';
 
 export default {
 
@@ -23,13 +23,13 @@ export default {
     data: {
         group: false,
         threshold: 5,
-        clsItem: 'uk-sortable-item',
-        clsPlaceholder: 'uk-sortable-placeholder',
-        clsDrag: 'uk-sortable-drag',
-        clsDragState: 'uk-drag',
-        clsBase: 'uk-sortable',
-        clsNoDrag: 'uk-sortable-nodrag',
-        clsEmpty: 'uk-sortable-empty',
+        clsItem: 'ng-sortable-item',
+        clsPlaceholder: 'ng-sortable-placeholder',
+        clsDrag: 'ng-sortable-drag',
+        clsDragState: 'ng-drag',
+        clsBase: 'ng-sortable',
+        clsNoDrag: 'ng-sortable-nodrag',
+        clsEmpty: 'ng-sortable-empty',
         clsCustom: '',
         handle: false
     },
@@ -128,7 +128,7 @@ export default {
                 width: this.placeholder.offsetWidth,
                 height: this.placeholder.offsetHeight
             }, css(this.placeholder, ['paddingLeft', 'paddingRight', 'paddingTop', 'paddingBottom'])));
-            attr(this.drag, 'uk-no-boot', '');
+            attr(this.drag, 'ng-no-boot', '');
             addClass(this.drag, this.clsDrag, this.clsCustom);
 
             height(this.drag.firstElementChild, height(this.placeholder.firstElementChild));

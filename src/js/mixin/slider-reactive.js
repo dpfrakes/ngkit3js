@@ -1,4 +1,4 @@
-import {removeClass} from 'uikit-util';
+import {removeClass} from 'ngkit-util';
 
 export default {
 

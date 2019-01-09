@@ -1,5 +1,5 @@
 import Class from '../mixin/class';
-import {$, empty, html} from 'uikit-util';
+import {$, empty, html} from 'ngkit-util';
 
 export default {
 
@@ -12,7 +12,7 @@ export default {
 
     data: {
         date: '',
-        clsWrapper: '.uk-countdown-%unit%'
+        clsWrapper: '.ng-countdown-%unit%'
     },
 
     computed: {

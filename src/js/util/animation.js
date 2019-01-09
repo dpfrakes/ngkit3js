@@ -21,7 +21,7 @@ export function transition(element, props, duration = 400, timing = 'linear') {
 
             once(element, 'transitionend transitioncanceled', ({type}) => {
                 clearTimeout(timer);
-                removeClass(element, 'uk-transition');
+                removeClass(element, 'ng-transition');
                 css(element, {
                     'transition-property': '',
                     'transition-duration': '',
@@ -30,7 +30,7 @@ export function transition(element, props, duration = 400, timing = 'linear') {
                 type === 'transitioncanceled' ? reject() : resolve();
             }, false, ({target}) => element === target);
 
-            addClass(element, 'uk-transition');
+            addClass(element, 'ng-transition');
             css(element, assign({
                 'transition-property': Object.keys(props).map(propName).join(','),
                 'transition-duration': `${duration}ms`,
@@ -56,13 +56,13 @@ export const Transition = {
     },
 
     inProgress(element) {
-        return hasClass(element, 'uk-transition');
+        return hasClass(element, 'ng-transition');
     }
 
 };
 
-const animationPrefix = 'uk-animation-';
-const clsCancelAnimation = 'uk-cancel-animation';
+const animationPrefix = 'ng-animation-';
+const clsCancelAnimation = 'ng-cancel-animation';
 
 export function animate(element, animation, duration = 200, origin, out) {
 
@@ -83,7 +83,7 @@ export function animate(element, animation, duration = 200, origin, out) {
             if (startsWith(animation, animationPrefix)) {
 
                 if (origin) {
-                    cls += ` uk-transform-origin-${origin}`;
+                    cls += ` ng-transform-origin-${origin}`;
                 }
 
                 if (out) {

@@ -1,6 +1,6 @@
 import Media from '../mixin/media';
 import Togglable from '../mixin/togglable';
-import {closest, hasTouch, includes, isTouch, isVisible, matches, pointerEnter, pointerLeave, queryAll, trigger} from 'uikit-util';
+import {closest, hasTouch, includes, isTouch, isVisible, matches, pointerEnter, pointerLeave, queryAll, trigger} from 'ngkit-util';
 
 export default {
 

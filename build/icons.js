@@ -11,7 +11,7 @@ glob(custom, (err, folders) =>
 
         const [, name] = folder.toString().match(new RegExp(match, 'i'));
         util.icons(`{src/images/icons,${folder}}/*.svg`).then(ICONS =>
-            util.compile('src/js/icons.js', `dist/js/uikit-icons-${name}`, {name, replaces: {ICONS}})
+            util.compile('src/js/icons.js', `dist/js/ngkit-icons-${name}`, {name, replaces: {ICONS}})
         );
 
     })

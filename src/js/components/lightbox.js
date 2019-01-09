@@ -1,5 +1,5 @@
 import LightboxPanel from './lightbox-panel';
-import {$$, assign, data, index, on} from 'uikit-util';
+import {$$, assign, data, index, on} from 'ngkit-util';
 
 export default {
 
@@ -28,7 +28,7 @@ export default {
             name: 'click',
 
             delegate() {
-                return `${this.toggle}:not(.uk-disabled)`;
+                return `${this.toggle}:not(.ng-disabled)`;
             },
 
             handler(e) {
@@ -87,15 +87,15 @@ function isEqualList(listA, listB) {
         && listA.every((el, i) => el === listB[i]);
 }
 
-function install(UIkit, Lightbox) {
+function install(ngkit, Lightbox) {
 
-    if (!UIkit.lightboxPanel) {
-        UIkit.component('lightboxPanel', LightboxPanel);
+    if (!ngkit.lightboxPanel) {
+        ngkit.component('lightboxPanel', LightboxPanel);
     }
 
     assign(
         Lightbox.props,
-        UIkit.component('lightboxPanel').options.props
+        ngkit.component('lightboxPanel').options.props
     );
 
 }

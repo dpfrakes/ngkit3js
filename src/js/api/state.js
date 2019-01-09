@@ -1,10 +1,10 @@
-import {assign, bind, camelize, data as getData, hasOwn, hyphenate, isArray, isBoolean, isFunction, isPlainObject, isString, isUndefined, mergeOptions, on, parseOptions, startsWith, toBoolean, toList, toNumber} from 'uikit-util';
+import {assign, bind, camelize, data as getData, hasOwn, hyphenate, isArray, isBoolean, isFunction, isPlainObject, isString, isUndefined, mergeOptions, on, parseOptions, startsWith, toBoolean, toList, toNumber} from 'ngkit-util';
 
-export default function (UIkit) {
+export default function (ngkit) {
 
     let uid = 0;
 
-    UIkit.prototype._init = function (options) {
+    ngkit.prototype._init = function (options) {
 
         options = options || {};
         options.data = normalizeData(options, this.constructor.options);
@@ -27,7 +27,7 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype._initData = function () {
+    ngkit.prototype._initData = function () {
 
         const {data = {}} = this.$options;
 
@@ -36,7 +36,7 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype._initMethods = function () {
+    ngkit.prototype._initMethods = function () {
 
         const {methods} = this.$options;
 
@@ -47,7 +47,7 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype._initComputeds = function () {
+    ngkit.prototype._initComputeds = function () {
 
         const {computed} = this.$options;
 
@@ -60,11 +60,11 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype._resetComputeds = function () {
+    ngkit.prototype._resetComputeds = function () {
         this._computeds = {};
     };
 
-    UIkit.prototype._initProps = function (props) {
+    ngkit.prototype._initProps = function (props) {
 
         let key;
 
@@ -86,7 +86,7 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype._initEvents = function () {
+    ngkit.prototype._initEvents = function () {
 
         const {events} = this.$options;
 
@@ -106,12 +106,12 @@ export default function (UIkit) {
         }
     };
 
-    UIkit.prototype._unbindEvents = function () {
+    ngkit.prototype._unbindEvents = function () {
         this._events.forEach(unbind => unbind());
         this._events = [];
     };
 
-    UIkit.prototype._initObserver = function () {
+    ngkit.prototype._initObserver = function () {
 
         let {attrs, props, el} = this.$options;
         if (this._observer || !props || attrs === false) {

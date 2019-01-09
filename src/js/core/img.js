@@ -1,4 +1,4 @@
-import {createEvent, css, Dimensions, endsWith, getImage, height, includes, isInView, isNumeric, noop, queryAll, startsWith, toFloat, trigger, width} from 'uikit-util';
+import {createEvent, css, Dimensions, endsWith, getImage, height, includes, isInView, isNumeric, noop, queryAll, startsWith, toFloat, trigger, width} from 'ngkit-util';
 
 export default {
 

@@ -1,5 +1,5 @@
 import Animations, {scale3d} from '../../mixin/internal/slideshow-animations';
-import {assign, css} from 'uikit-util';
+import {assign, css} from 'ngkit-util';
 
 export default assign({}, Animations, {
 

@@ -1,124 +1,52 @@
 <!DOCTYPE html>
-<html lang="en-gb" dir="ltr">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet"
+          href="highlight/styles/monokai-sublime.css">
+    <script src="highlight/highlight.pack.js"></script>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Alert - UIkit tests</title>
-        <script src="js/test.js"></script>
-    </head>
 
-    <body>
+    <link rel="stylesheet" type="text/css" href="ngkit/css/ngkit.css"/>
+    <script type="application/javascript" src="../dist/js/ngkit.min.js"></script>
 
-        <div class="uk-container">
 
-            <h1>Alert</h1>
 
-            <div uk-alert>
-                <a href="#" class="uk-alert-close" uk-close></a>
-                <p><strong>Alert!</strong> Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
 
-            <div class="uk-alert-primary" uk-alert>
-                <a href="#" class="uk-alert-close" uk-close></a>
-                <p><strong>Primary!</strong> Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+<h1>Alert</h1>
 
-            <div class="uk-alert-success" uk-alert>
-                <a href="#" class="uk-alert-close" uk-close></a>
-                <p><strong>Success!</strong> Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
 
-            <div class="uk-alert-warning" uk-alert>
-                <a href="#" class="uk-alert-close" uk-close></a>
-                <p><strong>Warning!</strong> Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+<div id="container-wrapper-398640" class="ng-width-full ng-auto-animate" style="background: #F5F5F5;z-index: 1;">
 
-            <div class="uk-alert-danger" uk-alert>
-                <a href="#" class="uk-alert-close" uk-close></a>
-                <p><strong>Danger!</strong> Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+    <div class="ng-container ng-container-center">
 
-            <h2>More Content</h2>
 
-            <div uk-alert>
-                <button class="uk-alert-close" type="button" uk-close></button>
-                <h3>Alert!</h3>
-                <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+        <div  class="ng-width-1-1   ">
 
-            <div class="uk-alert-primary" uk-alert>
-                <button class="uk-alert-close" type="button" uk-close></button>
-                <h3>Primary!</h3>
-                <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
 
-            <div class="uk-alert-success" uk-alert>
-                <button class="uk-alert-close" type="button" uk-close></button>
-                <h3>Success!</h3>
-                <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
 
-            <div class="uk-alert-warning" uk-alert>
-                <button class="uk-alert-close" type="button" uk-close></button>
-                <h3>Warning!</h3>
-                <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
 
-            <div class="uk-alert-danger" uk-alert>
-                <button class="uk-alert-close" type="button" uk-close></button>
-                <h3>Danger!</h3>
-                <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
 
-            <h2>Animations</h2>
 
-            <div uk-alert="animation: uk-animation-scale-up; duration:1000">
-                <a href="#" class="uk-alert-close" uk-close></a>
-                <p><strong>Alert!</strong> Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+                <div class="ng-alert ng-alert-success" data-ng-alert>
+                    <a href="" class="ng-alert-close ng-close"></a>
+                    <p>To indicate success or a positive message add the <code>.ng-alert-success</code> class.</p>
+                </div>
 
-            <div class="uk-alert-primary" uk-alert="animation: uk-animation-scale-down">
-                <a href="#" class="uk-alert-close" uk-close></a>
-                <p><strong>Primary!</strong> Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
 
-            <h2>JavaScript Options</h2>
+    </div>
 
-            <div class="uk-overflow-auto">
-                <table class="uk-table uk-table-striped">
-                    <thead>
-                        <tr>
-                            <th>Option</th>
-                            <th>Value</th>
-                            <th>Default</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>animation</code></td>
-                            <td>Boolean|String</td>
-                            <td>true</td>
-                            <td>On close fade out or use given animation.</td>
-                        </tr>
-                        <tr>
-                            <td><code>duration</code></td>
-                            <td>Number</td>
-                            <td>150</td>
-                            <td>The animation duration.</td>
-                        </tr>
-                        <tr>
-                            <td><code>sel-close</code></td>
-                            <td>CSS selector</td>
-                            <td>.uk-alert-close</td>
-                            <td>The close trigger element.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
-        </div>
+</div>
 
-    </body>
+</div>
+
+
+
+</body>
 </html>

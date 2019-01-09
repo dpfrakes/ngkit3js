@@ -1,4 +1,4 @@
-import {$$, boxModelAdjust, css, isIE, toFloat} from 'uikit-util';
+import {$$, boxModelAdjust, css, isIE, toFloat} from 'ngkit-util';
 
 // IE 11 fix (min-height on a flex container won't apply to its flex items)
 export default isIE ? {

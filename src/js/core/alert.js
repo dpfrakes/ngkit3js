@@ -1,6 +1,6 @@
 import Class from '../mixin/class';
 import Togglable from '../mixin/togglable';
-import {assign} from 'uikit-util';
+import {assign} from 'ngkit-util';
 
 export default {
 
@@ -14,7 +14,7 @@ export default {
 
     data: {
         animation: [true],
-        selClose: '.uk-alert-close',
+        selClose: '.ng-alert-close',
         duration: 150,
         hideProps: assign({opacity: 0}, Togglable.data.hideProps)
     },

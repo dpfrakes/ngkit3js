@@ -1,6 +1,6 @@
 import Position from '../mixin/position';
 import Togglable from '../mixin/togglable';
-import {$$, addClass, Animation, attr, css, includes, isTouch, MouseTracker, offset, on, once, pointerEnter, pointerLeave, pointInRect, query, removeClass, removeClasses, toggleClass, within} from 'uikit-util';
+import {$$, addClass, Animation, attr, css, includes, isTouch, MouseTracker, offset, on, once, pointerEnter, pointerLeave, pointInRect, query, removeClass, removeClasses, toggleClass, within} from 'ngkit-util';
 
 let active;
 
@@ -29,8 +29,8 @@ export default {
         delayHide: 800,
         clsDrop: false,
         hoverIdle: 200,
-        animation: ['uk-animation-fade'],
-        cls: 'uk-open'
+        animation: ['ng-animation-fade'],
+        cls: 'ng-open'
     },
 
     computed: {
@@ -40,7 +40,7 @@ export default {
         },
 
         clsDrop({clsDrop}) {
-            return clsDrop || `uk-${this.$options.name}`;
+            return clsDrop || `ng-${this.$options.name}`;
         },
 
         clsPos() {

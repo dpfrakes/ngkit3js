@@ -1,9 +1,9 @@
 import {getComponentName} from './component';
-import {fastdom, hasAttr} from 'uikit-util';
+import {fastdom, hasAttr} from 'ngkit-util';
 
-export default function (UIkit) {
+export default function (ngkit) {
 
-    const {connect, disconnect} = UIkit;
+    const {connect, disconnect} = ngkit;
 
     if (!('MutationObserver' in window)) {
         return;
@@ -39,7 +39,7 @@ export default function (UIkit) {
             attributes: true
         });
 
-        UIkit._initialized = true;
+        ngkit._initialized = true;
     }
 
     function applyMutation(mutation) {
@@ -50,7 +50,7 @@ export default function (UIkit) {
             ? applyChildList(mutation)
             : applyAttribute(mutation);
 
-        update && UIkit.update(target);
+        update && ngkit.update(target);
 
     }
 
@@ -62,16 +62,16 @@ export default function (UIkit) {
 
         const name = getComponentName(attributeName);
 
-        if (!name || !(name in UIkit)) {
+        if (!name || !(name in ngkit)) {
             return;
         }
 
         if (hasAttr(target, attributeName)) {
-            UIkit[name](target);
+            ngkit[name](target);
             return true;
         }
 
-        const component = UIkit.getComponent(target, name);
+        const component = ngkit.getComponent(target, name);
 
         if (component) {
             component.$destroy();
@@ -95,7 +95,7 @@ export default function (UIkit) {
 
     function apply(node, fn) {
 
-        if (node.nodeType !== 1 || hasAttr(node, 'uk-no-boot')) {
+        if (node.nodeType !== 1 || hasAttr(node, 'ng-no-boot')) {
             return;
         }
 

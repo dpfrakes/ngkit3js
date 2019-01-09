@@ -3,7 +3,7 @@ import Container from '../mixin/container';
 import Modal from '../mixin/modal';
 import Slideshow from '../mixin/slideshow';
 import Togglable from '../mixin/togglable';
-import {$, addClass, ajax, append, assign, attr, css, getImage, html, index, once, pointerDown, pointerMove, removeClass, Transition, trigger} from 'uikit-util';
+import {$, addClass, ajax, append, assign, attr, css, getImage, html, index, once, pointerDown, pointerMove, removeClass, Transition, trigger} from 'ngkit-util';
 
 export default {
 
@@ -23,22 +23,22 @@ export default {
         videoAutoplay: false,
         delayControls: 3000,
         items: [],
-        cls: 'uk-open',
-        clsPage: 'uk-lightbox-page',
-        selList: '.uk-lightbox-items',
-        attrItem: 'uk-lightbox-item',
-        selClose: '.uk-close-large',
+        cls: 'ng-open',
+        clsPage: 'ng-lightbox-page',
+        selList: '.ng-lightbox-items',
+        attrItem: 'ng-lightbox-item',
+        selClose: '.ng-close-large',
         pauseOnHover: false,
         velocity: 2,
         Animations,
-        template: `<div class="uk-lightbox uk-overflow-hidden">
-                        <ul class="uk-lightbox-items"></ul>
-                        <div class="uk-lightbox-toolbar uk-position-top uk-text-right uk-transition-slide-top uk-transition-opaque">
-                            <button class="uk-lightbox-toolbar-icon uk-close-large" type="button" uk-close></button>
+        template: `<div class="ng-lightbox ng-overflow-hidden">
+                        <ul class="ng-lightbox-items"></ul>
+                        <div class="ng-lightbox-toolbar ng-position-top ng-text-right ng-transition-slide-top ng-transition-opaque">
+                            <button class="ng-lightbox-toolbar-icon ng-close-large" type="button" ng-close></button>
                          </div>
-                        <a class="uk-lightbox-button uk-position-center-left uk-position-medium uk-transition-fade" href="#" uk-slidenav-previous uk-lightbox-item="previous"></a>
-                        <a class="uk-lightbox-button uk-position-center-right uk-position-medium uk-transition-fade" href="#" uk-slidenav-next uk-lightbox-item="next"></a>
-                        <div class="uk-lightbox-toolbar uk-lightbox-caption uk-position-bottom uk-text-center uk-transition-slide-bottom uk-transition-opaque"></div>
+                        <a class="ng-lightbox-button ng-position-center-left ng-position-medium ng-transition-fade" href="#" ng-slidenav-previous ng-lightbox-item="previous"></a>
+                        <a class="ng-lightbox-button ng-position-center-right ng-position-medium ng-transition-fade" href="#" ng-slidenav-next ng-lightbox-item="next"></a>
+                        <div class="ng-lightbox-toolbar ng-lightbox-caption ng-position-bottom ng-text-center ng-transition-slide-bottom ng-transition-opaque"></div>
                     </div>`
     }),
 
@@ -46,7 +46,7 @@ export default {
 
         this.$mount(append(this.container, this.template));
 
-        this.caption = $('.uk-lightbox-caption', this.$el);
+        this.caption = $('.ng-lightbox-caption', this.$el);
 
         this.items.forEach(() => append(this.list, '<li></li>'));
 
@@ -207,7 +207,7 @@ export default {
 
                 const {source, type, alt} = item;
 
-                this.setItem(item, '<span uk-spinner></span>');
+                this.setItem(item, '<span ng-spinner></span>');
 
                 if (!source) {
                     return;
@@ -226,7 +226,7 @@ export default {
                     // Video
                 } else if (type === 'video' || source.match(/\.(mp4|webm|ogv)($|\?)/i)) {
 
-                    const video = $(`<video controls playsinline${item.poster ? ` poster="${item.poster}"` : ''} uk-video="${this.videoAutoplay}"></video>`);
+                    const video = $(`<video controls playsinline${item.poster ? ` poster="${item.poster}"` : ''} ng-video="${this.videoAutoplay}"></video>`);
                     attr(video, 'src', source);
 
                     once(video, 'error loadedmetadata', type => {
@@ -241,7 +241,7 @@ export default {
                     // Iframe
                 } else if (type === 'iframe' || source.match(/\.(html|php)($|\?)/i)) {
 
-                    this.setItem(item, `<iframe class="uk-lightbox-iframe" src="${source}" frameborder="0" allowfullscreen></iframe>`);
+                    this.setItem(item, `<iframe class="ng-lightbox-iframe" src="${source}" frameborder="0" allowfullscreen></iframe>`);
 
                     // YouTube
                 } else if ((matches = source.match(/\/\/.*?youtube(-nocookie)?\.[a-z]+\/watch\?v=([^&\s]+)/) || source.match(/()youtu\.be\/(.*)/))) {
@@ -306,7 +306,7 @@ export default {
         },
 
         setError(item) {
-            this.setItem(item, '<span uk-icon="icon: bolt; ratio: 2"></span>');
+            this.setItem(item, '<span ng-icon="icon: bolt; ratio: 2"></span>');
         },
 
         showControls() {
@@ -314,12 +314,12 @@ export default {
             clearTimeout(this.controlsTimer);
             this.controlsTimer = setTimeout(this.hideControls, this.delayControls);
 
-            addClass(this.$el, 'uk-active', 'uk-transition-active');
+            addClass(this.$el, 'ng-active', 'ng-transition-active');
 
         },
 
         hideControls() {
-            removeClass(this.$el, 'uk-active', 'uk-transition-active');
+            removeClass(this.$el, 'ng-active', 'ng-transition-active');
         }
 
     }
@@ -327,5 +327,5 @@ export default {
 };
 
 function getIframe(src, width, height, autoplay) {
-    return `<iframe src="${src}" width="${width}" height="${height}" style="max-width: 100%; box-sizing: border-box;" frameborder="0" allowfullscreen uk-video="autoplay: ${autoplay}" uk-responsive></iframe>`;
+    return `<iframe src="${src}" width="${width}" height="${height}" style="max-width: 100%; box-sizing: border-box;" frameborder="0" allowfullscreen ng-video="autoplay: ${autoplay}" ng-responsive></iframe>`;
 }

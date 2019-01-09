@@ -1,6 +1,6 @@
 import Switcher from './switcher';
 import Class from '../mixin/class';
-import {hasClass} from 'uikit-util';
+import {hasClass} from 'ngkit-util';
 
 export default {
 
@@ -14,15 +14,15 @@ export default {
 
     data: {
         media: 960,
-        attrItem: 'uk-tab-item'
+        attrItem: 'ng-tab-item'
     },
 
     connected() {
 
-        const cls = hasClass(this.$el, 'uk-tab-left')
-            ? 'uk-tab-left'
-            : hasClass(this.$el, 'uk-tab-right')
-                ? 'uk-tab-right'
+        const cls = hasClass(this.$el, 'ng-tab-left')
+            ? 'ng-tab-left'
+            : hasClass(this.$el, 'ng-tab-right')
+                ? 'ng-tab-right'
                 : false;
 
         if (cls) {

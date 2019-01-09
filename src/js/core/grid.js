@@ -1,6 +1,6 @@
 import Margin from './margin';
 import Class from '../mixin/class';
-import {addClass, css, hasClass, height as getHeight, isRtl, scrolledOver, toFloat, toggleClass, toNodes, Transition, sortBy} from 'uikit-util';
+import {addClass, css, hasClass, height as getHeight, isRtl, scrolledOver, toFloat, toggleClass, toNodes, Transition, sortBy} from 'ngkit-util';
 
 export default {
 
@@ -16,8 +16,8 @@ export default {
     },
 
     data: {
-        margin: 'uk-grid-margin',
-        clsStack: 'uk-grid-stack',
+        margin: 'ng-grid-margin',
+        clsStack: 'ng-grid-stack',
         masonry: false,
         parallax: 0
     },
@@ -35,7 +35,7 @@ export default {
     },
 
     connected() {
-        this.masonry && addClass(this.$el, 'uk-flex-top uk-flex-wrap-top');
+        this.masonry && addClass(this.$el, 'ng-flex-top ng-flex-wrap-top');
     },
 
     update: [

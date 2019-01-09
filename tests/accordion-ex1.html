@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet"
+          href="highlight/styles/monokai-sublime.css">
+    <script src="highlight/highlight.pack.js"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="ngkit/css/ngkit.css"/>
+    <script type="application/javascript" src="../dist/js/ngkit.min.js"></script>
+
+    <!-- Temp css fixes -->
+    <style>
+
+        .ng-accordion :not(.ng-open) .ng-panel {
+            display: none !important;
+        }
+
+    </style>
+
+
+
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<h1>Accordion</h1>
+Notes:<br/>
+Instead of the old format:
+<pre>
+    <code class="xml">
+    &lt;div class=&quot;ng-accordion ng-accordion-large&quot; data-ng-accordion='{&quot;target&quot;: &quot;#acc-item-6314&quot;}'&gt;
+        &lt;div class=&quot;ng-accordion-header&quot;&gt;
+            &lt;div class=&quot;ng-article-subhead&quot;&gt;Welcome to the 2017 Explorers Festival&lt;/div&gt;
+            &lt;i class=&quot;ng-icon ng-toggle-close&quot;&gt;
+                &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 32 32&quot;&gt;
+                    &lt;path d=&quot;M0 23.3l1.5 1.4L16 10.2l14.5 14.5 1.5-1.4-16-16z&quot;&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+            &lt;/i&gt;
+            &lt;i class=&quot;ng-icon ng-toggle-open&quot;&gt;
+                &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 32 32&quot;&gt;
+                    &lt;path d=&quot;M0 8.7l1.5-1.4L16 21.8 30.5 7.3 32 8.7l-16 16z&quot;&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+            &lt;/i&gt;
+            &lt;div class=&quot;ng-panel&quot;&gt;
+                &lt;p class=&quot;ng-unstyled ng-article-lead&quot;&gt;9:00 a.m. - 9:10 a.m. ET&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;ng-panel ng-hidden&quot; id=&quot;acc-item-6314&quot;&gt;
+            &lt;div class=&quot;ng-accordion-body&quot;&gt;&lt;p&gt;&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;/leadership/gary-knell/&quot;&gt;Gary E. Knell&lt;/a&gt;, President and CEO,
+                        National Geographic Society
+                    &lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;/leadership/brooke-runnette/&quot;&gt;Brooke Runnette&lt;/a&gt;, Executive
+                        Vice President and Chief Program Officer, National Geographic Society
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    </code>
+</pre>
+<br/>
+It must have the updated data attributes and div wrapper and remove ng-hidden from ng-panel. Also this style:
+
+<pre>
+    <code class="css">
+    .ng-accordion :not(.ng-open) .ng-panel {
+        display: none !important;
+    }
+    </code>
+</pre>
+
+<pre>
+    <code class="xml">
+    &lt;div class=&quot;ng-accordion ng-accordion-large&quot; data-ng-accordion data-content=&quot;#acc-item-6394&quot;&gt;
+        &lt;div&gt;
+            &lt;div class=&quot;ng-accordion-header&quot;&gt;
+                &lt;div class=&quot;ng-article-subhead&quot;&gt;Welcome to the 2017 Explorers Festival&lt;/div&gt;
+                &lt;i class=&quot;ng-icon ng-toggle-close&quot;&gt;
+                    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 32 32&quot;&gt;
+                        &lt;path d=&quot;M0 23.3l1.5 1.4L16 10.2l14.5 14.5 1.5-1.4-16-16z&quot;&gt;&lt;/path&gt;
+                    &lt;/svg&gt;
+                &lt;/i&gt;
+                &lt;i class=&quot;ng-icon ng-toggle-open&quot;&gt;
+                    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 32 32&quot;&gt;
+                        &lt;path d=&quot;M0 8.7l1.5-1.4L16 21.8 30.5 7.3 32 8.7l-16 16z&quot;&gt;&lt;/path&gt;
+                    &lt;/svg&gt;
+                &lt;/i&gt;
+                &lt;div class=&quot;ng-panel&quot;&gt;
+                    &lt;p class=&quot;ng-unstyled ng-article-lead&quot;&gt;9:00 a.m. - 9:10 a.m. ET&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ng-panel&quot; id=&quot;acc-item-6394&quot;&gt;
+                &lt;div class=&quot;ng-accordion-body&quot;&gt;&lt;p&gt;&lt;/p&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;/leadership/gary-knell/&quot;&gt;Gary E. Knell&lt;/a&gt;, President and CEO,
+                            National Geographic Society
+                        &lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;/leadership/brooke-runnette/&quot;&gt;Brooke Runnette&lt;/a&gt;, Executive
+                            Vice President and Chief Program Officer, National Geographic Society
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;p&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code>
+</pre>
+
+<div id="container-wrapper-288151" class="explorers-festival-2017-container-plugin-288151 ng-width-full ng-auto-animate"
+     style="background: #F5F5F5;z-index: 1;">
+
+    <div class="ng-container ng-container-center">
+
+
+        <div id="container-288151"
+             class="container-plugin-288151 ng-item-container ng-container-center ng-width-1-1   ">
+            <div class="ng-item-container-content">
+
+
+                <!-- multi_column.html -->
+                <div class="ng-grid ng-grid-preserve ng-grid-medium ng-flex ng-flex-center" data-ng-grid-match=""
+                     data-ng-grid-margin="">
+
+
+                    <!-- column.html -->
+                    <div class="ng-width-medium-smart-3-4">
+
+
+                        <div class="explorers-festival-2017-accordion-plugin-288154">
+                            <div class="ng-accordion ng-accordion-large" data-ng-accordion
+                                 data-content="#acc-item-6354">
+                                <div>
+                                    <div class="ng-accordion-header">
+                                        <div class="ng-article-subhead">Welcome to the 2017 Explorers Festival</div>
+                                        <i class="ng-icon ng-toggle-close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                <path d="M0 23.3l1.5 1.4L16 10.2l14.5 14.5 1.5-1.4-16-16z"></path>
+                                            </svg>
+                                        </i>
+                                        <i class="ng-icon ng-toggle-open">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                <path d="M0 8.7l1.5-1.4L16 21.8 30.5 7.3 32 8.7l-16 16z"></path>
+                                            </svg>
+                                        </i>
+                                        <div class="ng-panel">
+                                            <p class="ng-unstyled ng-article-lead">9:00 a.m. - 9:10 a.m. ET</p>
+                                        </div>
+                                    </div>
+                                    <div class="ng-panel" id="acc-item-6354">
+                                        <div class="ng-accordion-body"><p></p>
+                                            <ul>
+                                                <li><a href="/leadership/gary-knell/">Gary E. Knell</a>, President and
+                                                    CEO,
+                                                    National Geographic Society
+                                                </li>
+                                                <li><a href="/leadership/brooke-runnette/">Brooke Runnette</a>,
+                                                    Executive
+                                                    Vice President and Chief Program Officer, National Geographic
+                                                    Society
+                                                </li>
+                                            </ul>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ng-accordion ng-accordion-large "
+                                 data-ng-accordion data-content="#acc-item-6355">
+                                <div>
+                                    <div class="ng-accordion-header">
+                                        <div class="ng-article-subhead">Breakthrough</div>
+                                        <i class="ng-icon ng-toggle-close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                <path d="M0 23.3l1.5 1.4L16 10.2l14.5 14.5 1.5-1.4-16-16z"></path>
+                                            </svg>
+                                        </i><i class="ng-icon ng-toggle-open">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                            <path d="M0 8.7l1.5-1.4L16 21.8 30.5 7.3 32 8.7l-16 16z"></path>
+                                        </svg>
+                                    </i>
+                                        <div class="ng-panel"><p class="ng-unstyled ng-article-lead">9:10 a.m. - 10:15
+                                            a.m.
+                                            ET</p></div>
+                                    </div>
+                                    <div class="ng-panel " id="acc-item-6355">
+                                        <div class="ng-accordion-body"><p></p>
+                                            <p>Kick off the day with a fascinating discussion featuring internationally
+                                                renowned National Geographic Explorers who will share their latest
+                                                breakthroughs and challenges.</p>
+                                            <p>Moderated by <a href="/leadership/jonathan-baillie/">Jonathan Baillie</a>,
+                                                Chief Scientist and Senior Vice President, Grants, National Geographic
+                                                Society</p>
+                                            <p>Featuring:</p>
+                                            <ul>
+                                                <li>Sarah Parcak, Space Archaeologist and National Geographic Fellow
+                                                </li>
+                                                <li>Enric Sala, Marine Ecologist and National Geographic
+                                                    Explorer-in-Residence
+                                                </li>
+                                                <li>Lee Berger, Paleoanthropologist and National Geographic
+                                                    Explorer-in-Residence
+                                                </li>
+                                            </ul>
+                                            <p></p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ng-accordion ng-accordion-large "
+                                 data-ng-accordion data-content="#acc-item-6356">
+                                <div>
+                                    <div class="ng-accordion-header">
+                                        <div class="ng-article-subhead">Exploration in Progress</div>
+                                        <i class="ng-icon ng-toggle-close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                <path d="M0 23.3l1.5 1.4L16 10.2l14.5 14.5 1.5-1.4-16-16z"></path>
+                                            </svg>
+                                        </i><i class="ng-icon ng-toggle-open">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                            <path d="M0 8.7l1.5-1.4L16 21.8 30.5 7.3 32 8.7l-16 16z"></path>
+                                        </svg>
+                                    </i>
+                                        <div class="ng-panel"><p class="ng-unstyled ng-article-lead">10:45 a.m. - 12:30
+                                            p.m.
+                                            ET</p></div>
+                                    </div>
+                                    <div class="ng-panel   " id="acc-item-6356">
+                                        <div class="ng-accordion-body"><p></p>
+                                            <p>Brief lightning-round talks allow Nat Geo Explorers to share updates on
+                                                their
+                                                current projects Moderated by Alex Moen, National Geographic Society
+                                                Vice
+                                                President, Explorer Programs</p>
+                                            <p>Including:</p>
+                                            <ul>
+                                                <li>Naftali Honig, Wildlife Crime Investigator, National Geographic 2016
+                                                    Emerging Explorer
+                                                </li>
+                                                <li>Krithi K. Karanth, Conservation Biologist, National Geographic 2012
+                                                    Emerging Explorer
+                                                </li>
+                                                <li>Maria Fadiman, Ethnobotanist, National Geographic 2006 Emerging
+                                                    Explorer
+                                                </li>
+                                                <li>Daniel Raven-Ellison, Guerrilla Geographer, National Geographic 2012
+                                                    Emerging Explorer
+                                                </li>
+                                                <li>Salam Al Kuntar, Archaeologist, National Geographic 2015&nbsp;Emerging
+                                                    Explorer
+                                                </li>
+                                            </ul>
+                                            <p>and many more.</p>
+                                            <p></p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ng-accordion ng-accordion-large "
+                                 data-ng-accordion data-content="#acc-item-6357">
+                                <div>
+                                    <div class="ng-accordion-header">
+                                        <div class="ng-article-subhead">Introducing the 2017 Emerging Explorers</div>
+                                        <i class="ng-icon ng-toggle-close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                <path d="M0 23.3l1.5 1.4L16 10.2l14.5 14.5 1.5-1.4-16-16z"></path>
+                                            </svg>
+                                        </i><i class="ng-icon ng-toggle-open">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                            <path d="M0 8.7l1.5-1.4L16 21.8 30.5 7.3 32 8.7l-16 16z"></path>
+                                        </svg>
+                                    </i>
+                                        <div class="ng-panel"><p class="ng-unstyled ng-article-lead">2:00 p.m. - 2:15
+                                            p.m.
+                                            ET</p></div>
+                                    </div>
+                                    <div class="ng-panel   " id="acc-item-6357">
+                                        <div class="ng-accordion-body"><p></p>
+                                            <p>Honoring our <a href="/explorers-festival/2017/emerging-explorers/">new
+                                                class</a> of innovative thinkers and change makers.</p>
+                                            <p>Master of Ceremony: <a href="/leadership/brooke-runnette/">Brooke
+                                                Runnette</a>, Executive Vice President and Chief Program Officer,
+                                                National
+                                                Geographic Society</p>
+                                            <p></p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ng-accordion ng-accordion-large "
+                                 data-ng-accordion data-content="#acc-item-6358">
+                                <div>
+                                    <div class="ng-accordion-header">
+                                        <div class="ng-article-subhead">Transformative Tech</div>
+                                        <i class="ng-icon ng-toggle-close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                <path d="M0 23.3l1.5 1.4L16 10.2l14.5 14.5 1.5-1.4-16-16z"></path>
+                                            </svg>
+                                        </i><i class="ng-icon ng-toggle-open">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                            <path d="M0 8.7l1.5-1.4L16 21.8 30.5 7.3 32 8.7l-16 16z"></path>
+                                        </svg>
+                                    </i>
+                                        <div class="ng-panel"><p class="ng-unstyled ng-article-lead">2:15 p.m. - 3:30
+                                            p.m.
+                                            ET</p></div>
+                                    </div>
+                                    <div class="ng-panel  " id="acc-item-6358">
+                                        <div class="ng-accordion-body"><p></p>
+                                            <p>These creative minds are deploying innovative technology to aid new
+                                                discoveries and develop a deeper understanding of our planet.</p>
+                                            <p>Moderated by Kaitlin Yarnall, National Geographic Society Deputy
+                                                Director,
+                                                Centers of Excellence</p>
+                                            <p>Featuring:</p>
+                                            <ul>
+                                                <li>
+                                                    <a href="https://voices.nationalgeographic.com/2017/06/02/national-geographic-emerging-explorer-grace-young-an-aquanaut-charting-the-seas-unknowns/">Grace
+                                                        C. Young</a>, Ocean Engineer, National Geographic 2017 Emerging
+                                                    Explorer
+                                                </li>
+                                                <li>Corey Jaskolski, Engineer and Inventor, National Geographic Fellow
+                                                </li>
+                                                <li>
+                                                    <a href="https://voices.nationalgeographic.com/2017/06/08/national-geographic-emerging-explorer-jennifer-lopez-making-space-and-tech-more-down-to-earth/">Jennifer
+                                                        W. Lopez</a>, Technologist and Data Scientist, National
+                                                    Geographic
+                                                    2017 Emerging Explorer
+                                                </li>
+                                                <li>Charlie Hamilton James, Photographer and Filmmaker, National
+                                                    Geographic
+                                                    Fellow
+                                                </li>
+                                            </ul>
+                                            <p></p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ng-accordion ng-accordion-large "
+                                 data-ng-accordion data-content="#acc-item-6359">
+                                <div>
+                                    <div class="ng-accordion-header">
+                                        <div class="ng-article-subhead">Community Innovators</div>
+                                        <i class="ng-icon ng-toggle-close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                <path d="M0 23.3l1.5 1.4L16 10.2l14.5 14.5 1.5-1.4-16-16z"></path>
+                                            </svg>
+                                        </i><i class="ng-icon ng-toggle-open">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                            <path d="M0 8.7l1.5-1.4L16 21.8 30.5 7.3 32 8.7l-16 16z"></path>
+                                        </svg>
+                                    </i>
+                                        <div class="ng-panel"><p class="ng-unstyled ng-article-lead">4:00 p.m. - 5:15
+                                            p.m.
+                                            ET</p></div>
+                                    </div>
+                                    <div class="ng-panel  " id="acc-item-6359">
+                                        <div class="ng-accordion-body"><p></p>
+                                            <p>Working hand in hand with local communities to protect cultural heritage
+                                                as
+                                                well as critical ecosystems.</p>
+                                            <p>Moderated by Chris Thornton, National Geographic Society Senior Director,
+                                                Grants and Cultural Heritage</p>
+                                            <p>Featuring:</p>
+                                            <ul>
+                                                <li>
+                                                    <a href="https://voices.nationalgeographic.com/2017/06/07/national-geographic-emerging-explorer-keolu-fox-uncovers-the-hidden-treasures-of-human-adaptation/">Keolu
+                                                        Fox</a>, Human Geneticist, National Geographic 2017 Emerging
+                                                    Explorer
+                                                </li>
+                                                <li>
+                                                    <a href="https://voices.nationalgeographic.com/2017/05/29/national-geographic-emerging-explorer-hindou-oumarou-ibrahim-raising-the-voice-of-indigenous-climate-knowledge/">Hindou
+                                                        Oumarou Ibrahim</a>, Environmental Activist and Geographer,
+                                                    National
+                                                    Geographic 2017 Emerging Explorer
+                                                </li>
+                                                <li>
+                                                    <a href="https://voices.nationalgeographic.com/2017/06/12/national-geographic-emerging-explorer-hotlin-ompusunggu-using-dentistry-to-stop-deforestation/">Hotlin
+                                                        Ompusunggu</a>, Dentist and Conservationist, National Geographic
+                                                    2017 Emerging Explorer
+                                                </li>
+                                                <li>Joe Riis, Wildlife Photojournalist, National Geographic Fellow</li>
+                                            </ul>
+                                            <p></p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

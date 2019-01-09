@@ -1,5 +1,5 @@
 import Modal from '../mixin/modal';
-import {$, addClass, append, css, hasClass, height, isTouch, removeClass, trigger, unwrap, wrapAll} from 'uikit-util';
+import {$, addClass, append, css, hasClass, height, isTouch, removeClass, trigger, unwrap, wrapAll} from 'ngkit-util';
 
 export default {
 
@@ -17,15 +17,15 @@ export default {
         mode: 'slide',
         flip: false,
         overlay: false,
-        clsPage: 'uk-offcanvas-page',
-        clsContainer: 'uk-offcanvas-container',
-        selPanel: '.uk-offcanvas-bar',
-        clsFlip: 'uk-offcanvas-flip',
-        clsContainerAnimation: 'uk-offcanvas-container-animation',
-        clsSidebarAnimation: 'uk-offcanvas-bar-animation',
-        clsMode: 'uk-offcanvas',
-        clsOverlay: 'uk-offcanvas-overlay',
-        selClose: '.uk-offcanvas-close'
+        clsPage: 'ng-offcanvas-page',
+        clsContainer: 'ng-offcanvas-container',
+        selPanel: '.ng-offcanvas-bar',
+        clsFlip: 'ng-offcanvas-flip',
+        clsContainerAnimation: 'ng-offcanvas-container-animation',
+        clsSidebarAnimation: 'ng-offcanvas-bar-animation',
+        clsMode: 'ng-offcanvas',
+        clsOverlay: 'ng-offcanvas-overlay',
+        selClose: '.ng-offcanvas-close'
     },
 
     computed: {

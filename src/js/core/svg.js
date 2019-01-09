@@ -1,4 +1,4 @@
-import {$, after, ajax, append, attr, includes, isString, isVoidElement, noop, Promise, remove, removeAttr, startsWith} from 'uikit-util';
+import {$, after, ajax, append, attr, includes, isString, isVoidElement, noop, Promise, remove, removeAttr, startsWith} from 'ngkit-util';
 
 const svgs = {};
 
@@ -26,7 +26,7 @@ export default {
 
     connected() {
 
-        this.class += ' uk-svg';
+        this.class += ' ng-svg';
 
         if (!this.icon && includes(this.src, '#')) {
 

@@ -1,6 +1,19 @@
 import Class from '../mixin/class';
 import Togglable from '../mixin/togglable';
-import {$, $$, attr, filter, getIndex, hasClass, includes, index, toggleClass, unwrap, wrapAll} from 'uikit-util';
+import {
+    $,
+    $$,
+    attr,
+    filter,
+    getIndex,
+    hasClass,
+    includes,
+    index,
+    toggleClass,
+    toNode,
+    unwrap,
+    wrapAll
+} from 'ngkit-util';
 
 export default {
 
@@ -22,15 +35,16 @@ export default {
         animation: [true],
         collapsible: true,
         multiple: false,
-        clsOpen: 'uk-open',
-        toggle: '> .uk-accordion-title',
-        content: '> .uk-accordion-content',
+        clsOpen: 'ng-open',
+        toggle: '> .ng-accordion-header',
+        content: '> .ng-accordion-content',
         transition: 'ease'
     },
 
     computed: {
 
         items({targets}, $el) {
+            // console.log('Inside items.....', targets);
             return $$(targets, $el);
         }
 
@@ -56,7 +70,6 @@ export default {
     ],
 
     connected() {
-
         if (this.active === false) {
             return;
         }
@@ -68,7 +81,7 @@ export default {
     },
 
     update() {
-
+        // console.log('Inside update.....', this);
         this.items.forEach(el => this._toggle($(this.content, el), hasClass(el, this.clsOpen)));
 
         const active = !this.collapsible && !hasClass(this.items, this.clsOpen) && this.items[0];
@@ -80,6 +93,7 @@ export default {
     methods: {
 
         toggle(item, animate) {
+            // console.log('In toggle item.... ', item);
 
             const index = getIndex(item, this.items);
             const active = filter(this.items, `.${this.clsOpen}`);
@@ -104,6 +118,13 @@ export default {
                     if (!el._wrapper) {
                         el._wrapper = wrapAll(content, '<div>');
                         attr(el._wrapper, 'hidden', state ? '' : null);
+                        if (state) {
+                            console.log("State is: ", state);
+                            console.log('wrapper... ', toNode(el._wrapper));
+                            $(el._wrapper).classList.add('ng-hidden');
+                        } else {
+                            $(el._wrapper).classList.remove('ng-hidden');
+                        }
                     }
 
                     this._toggle(content, true);

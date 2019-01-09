@@ -1,4 +1,4 @@
-import {$, $$, data, html, toggleClass, toNumber} from 'uikit-util';
+import {$, $$, data, html, toggleClass, toNumber} from 'ngkit-util';
 
 export default {
 
@@ -30,7 +30,7 @@ export default {
                 html(this.nav, this.slides.map((_, i) => `<li ${this.attrItem}="${i}"><a href="#"></a></li>`).join(''));
             }
 
-            toggleClass($$(this.navItemSelector, this.$el).concat(this.nav), 'uk-hidden', !this.maxIndex);
+            toggleClass($$(this.navItemSelector, this.$el).concat(this.nav), 'ng-hidden', !this.maxIndex);
 
             this.updateNav();
 
@@ -77,7 +77,7 @@ export default {
                 const cmd = data(el, this.attrItem);
 
                 toggleClass(el, this.clsActive, toNumber(cmd) === i);
-                toggleClass(el, 'uk-invisible', this.finite && (cmd === 'previous' && i === 0 || cmd === 'next' && i >= this.maxIndex));
+                toggleClass(el, 'ng-invisible', this.finite && (cmd === 'previous' && i === 0 || cmd === 'next' && i >= this.maxIndex));
             });
 
         }
