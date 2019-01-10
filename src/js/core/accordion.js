@@ -107,12 +107,19 @@ export default {
                     const isItem = el === item;
                     const state = isItem && !hasClass(el, this.clsOpen);
 
+                    if (state) {
+                        el.querySelector('.ng-toggle-open').setAttribute('style', 'display:none');
+                        el.querySelector('.ng-toggle-close').setAttribute('style', 'display:inline-block');
+                    } else {
+                        el.querySelector('.ng-toggle-close').setAttribute('style', 'display:none');
+                        el.querySelector('.ng-toggle-open').setAttribute('style', 'display:inline-block');
+                    }
+
                     if (!state && isItem && !this.collapsible && active.length < 2) {
                         return;
                     }
 
                     toggleClass(el, this.clsOpen, state);
-
                     const content = el._wrapper ? el._wrapper.firstElementChild : $(this.content, el);
 
                     if (!el._wrapper) {
@@ -129,7 +136,6 @@ export default {
 
                     this._toggle(content, true);
                     this.toggleElement(el._wrapper, state, animate).then(() => {
-
                         if (hasClass(el, this.clsOpen) !== state) {
                             return;
                         }

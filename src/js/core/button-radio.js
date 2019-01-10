@@ -1,5 +1,5 @@
 import Class from '../mixin/class';
-import {addClass, query} from "ngkit-util";
+
 
 export default {
 
