@@ -13,15 +13,6 @@
     <link rel="stylesheet" type="text/css" href="ngkit/css/ngkit.css"/>
     <script type="application/javascript" src="../dist/js/ngkit.min.js"></script>
 
-    <!-- Temp css fixes -->
-    <style>
-
-        .ng-accordion :not(.ng-open) .ng-panel {
-            display: none !important;
-        }
-
-    </style>
-
 
 
     <script>hljs.initHighlightingOnLoad();</script>
@@ -29,10 +20,16 @@
 <body>
 <h1>Accordion</h1>
 Notes:<br/>
-Instead of the old format:
+<ol>
+    <li>data params must be in valid json notation</li>
+    <li>In the wrapper div right above the ng-accordion-body, use ng-accordion-content instead of ng-panel. Also remove the ng-hidden class</li>
+    <li>Wrapper div around the header and content</li>
+</ol>
+
+<h3>Old Syntax</h3>
 <pre>
     <code class="xml">
-    &lt;div class=&quot;ng-accordion ng-accordion-large&quot; data-ng-accordion='{&quot;target&quot;: &quot;#acc-item-6314&quot;}'&gt;
+    &lt;div class=&quot;ng-accordion ng-accordion-large&quot; data-ng-accordion='{target: &quot;#acc-item-6314&quot;}'&gt;
         &lt;div class=&quot;ng-accordion-header&quot;&gt;
             &lt;div class=&quot;ng-article-subhead&quot;&gt;Welcome to the 2017 Explorers Festival&lt;/div&gt;
             &lt;i class=&quot;ng-icon ng-toggle-close&quot;&gt;
@@ -66,19 +63,10 @@ Instead of the old format:
     </code>
 </pre>
 <br/>
-It must have the updated data attributes and div wrapper and remove ng-hidden from ng-panel. Also this style:
-
-<pre>
-    <code class="css">
-    .ng-accordion :not(.ng-open) .ng-panel {
-        display: none !important;
-    }
-    </code>
-</pre>
-
+<h3>New Syntax</h3>
 <pre>
     <code class="xml">
-    &lt;div class=&quot;ng-accordion ng-accordion-large&quot; data-ng-accordion data-content=&quot;#acc-item-6394&quot;&gt;
+    &lt;div class=&quot;ng-accordion ng-accordion-large&quot; data-ng-accordion=&quot;{'content':'#acc-item-6354','animation':true,'duration':300}&quot;&gt;
         &lt;div&gt;
             &lt;div class=&quot;ng-accordion-header&quot;&gt;
                 &lt;div class=&quot;ng-article-subhead&quot;&gt;Welcome to the 2017 Explorers Festival&lt;/div&gt;
@@ -96,14 +84,17 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                     &lt;p class=&quot;ng-unstyled ng-article-lead&quot;&gt;9:00 a.m. - 9:10 a.m. ET&lt;/p&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;ng-panel&quot; id=&quot;acc-item-6394&quot;&gt;
+            &lt;div class=&quot;ng-accordion-content&quot; id=&quot;acc-item-6354&quot;&gt;
                 &lt;div class=&quot;ng-accordion-body&quot;&gt;&lt;p&gt;&lt;/p&gt;
                     &lt;ul&gt;
-                        &lt;li&gt;&lt;a href=&quot;/leadership/gary-knell/&quot;&gt;Gary E. Knell&lt;/a&gt;, President and CEO,
+                        &lt;li&gt;&lt;a href=&quot;/leadership/gary-knell/&quot;&gt;Gary E. Knell&lt;/a&gt;, President and
+                            CEO,
                             National Geographic Society
                         &lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;/leadership/brooke-runnette/&quot;&gt;Brooke Runnette&lt;/a&gt;, Executive
-                            Vice President and Chief Program Officer, National Geographic Society
+                        &lt;li&gt;&lt;a href=&quot;/leadership/brooke-runnette/&quot;&gt;Brooke Runnette&lt;/a&gt;,
+                            Executive
+                            Vice President and Chief Program Officer, National Geographic
+                            Society
                         &lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;p&gt;&lt;/p&gt;
@@ -135,8 +126,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
 
 
                         <div class="explorers-festival-2017-accordion-plugin-288154">
-                            <div class="ng-accordion ng-accordion-large" data-ng-accordion
-                                 data-content="#acc-item-6354">
+                            <div class="ng-accordion ng-accordion-large" data-ng-accordion="{'content':'#acc-item-6354','animation':true,'duration':300}">
                                 <div>
                                     <div class="ng-accordion-header">
                                         <div class="ng-article-subhead">Welcome to the 2017 Explorers Festival</div>
@@ -154,7 +144,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                             <p class="ng-unstyled ng-article-lead">9:00 a.m. - 9:10 a.m. ET</p>
                                         </div>
                                     </div>
-                                    <div class="ng-panel" id="acc-item-6354">
+                                    <div class="ng-accordion-content" id="acc-item-6354">
                                         <div class="ng-accordion-body"><p></p>
                                             <ul>
                                                 <li><a href="/leadership/gary-knell/">Gary E. Knell</a>, President and
@@ -174,7 +164,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                             </div>
 
                             <div class="ng-accordion ng-accordion-large "
-                                 data-ng-accordion data-content="#acc-item-6355">
+                                 data-ng-accordion="{'content':'#acc-item-6355','animation':true,'duration':300}">
                                 <div>
                                     <div class="ng-accordion-header">
                                         <div class="ng-article-subhead">Breakthrough</div>
@@ -191,7 +181,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                             a.m.
                                             ET</p></div>
                                     </div>
-                                    <div class="ng-panel " id="acc-item-6355">
+                                    <div class="ng-accordion-content " id="acc-item-6355">
                                         <div class="ng-accordion-body"><p></p>
                                             <p>Kick off the day with a fascinating discussion featuring internationally
                                                 renowned National Geographic Explorers who will share their latest
@@ -215,7 +205,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                 </div>
                             </div>
                             <div class="ng-accordion ng-accordion-large "
-                                 data-ng-accordion data-content="#acc-item-6356">
+                                 data-ng-accordion="{'content':'#acc-item-6356','animation':true,'duration':300}" >
                                 <div>
                                     <div class="ng-accordion-header">
                                         <div class="ng-article-subhead">Exploration in Progress</div>
@@ -232,7 +222,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                             p.m.
                                             ET</p></div>
                                     </div>
-                                    <div class="ng-panel   " id="acc-item-6356">
+                                    <div class="ng-accordion-content   " id="acc-item-6356">
                                         <div class="ng-accordion-body"><p></p>
                                             <p>Brief lightning-round talks allow Nat Geo Explorers to share updates on
                                                 their
@@ -263,7 +253,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                 </div>
                             </div>
                             <div class="ng-accordion ng-accordion-large "
-                                 data-ng-accordion data-content="#acc-item-6357">
+                                 data-ng-accordion="{'content':'#acc-item-6357','animation':true,'duration':300}">
                                 <div>
                                     <div class="ng-accordion-header">
                                         <div class="ng-article-subhead">Introducing the 2017 Emerging Explorers</div>
@@ -280,7 +270,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                             p.m.
                                             ET</p></div>
                                     </div>
-                                    <div class="ng-panel   " id="acc-item-6357">
+                                    <div class="ng-accordion-content   " id="acc-item-6357">
                                         <div class="ng-accordion-body"><p></p>
                                             <p>Honoring our <a href="/explorers-festival/2017/emerging-explorers/">new
                                                 class</a> of innovative thinkers and change makers.</p>
@@ -293,7 +283,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                 </div>
                             </div>
                             <div class="ng-accordion ng-accordion-large "
-                                 data-ng-accordion data-content="#acc-item-6358">
+                                 data-ng-accordion="{'content':'#acc-item-6358','animation':true,'duration':300}">
                                 <div>
                                     <div class="ng-accordion-header">
                                         <div class="ng-article-subhead">Transformative Tech</div>
@@ -310,7 +300,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                             p.m.
                                             ET</p></div>
                                     </div>
-                                    <div class="ng-panel  " id="acc-item-6358">
+                                    <div class="ng-accordion-content  " id="acc-item-6358">
                                         <div class="ng-accordion-body"><p></p>
                                             <p>These creative minds are deploying innovative technology to aid new
                                                 discoveries and develop a deeper understanding of our planet.</p>
@@ -342,7 +332,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                 </div>
                             </div>
                             <div class="ng-accordion ng-accordion-large "
-                                 data-ng-accordion data-content="#acc-item-6359">
+                                 data-ng-accordion="{'content':'#acc-item-6359','animation':true,'duration':300}" >
                                 <div>
                                     <div class="ng-accordion-header">
                                         <div class="ng-article-subhead">Community Innovators</div>
@@ -359,7 +349,7 @@ It must have the updated data attributes and div wrapper and remove ng-hidden fr
                                             p.m.
                                             ET</p></div>
                                     </div>
-                                    <div class="ng-panel  " id="acc-item-6359">
+                                    <div class="ng-accordion-content  " id="acc-item-6359">
                                         <div class="ng-accordion-body"><p></p>
                                             <p>Working hand in hand with local communities to protect cultural heritage
                                                 as

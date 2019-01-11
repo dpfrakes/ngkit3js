@@ -13,6 +13,9 @@ import Sortable from './components/sortable';
 import Tooltip from './components/tooltip';
 import Upload from './components/upload';
 
+// TODO: Remove when understanding it understood
+import Testcomp from './components/testcomp';
+
 ngkit.component('countdown', Countdown);
 ngkit.component('filter', Filter);
 ngkit.component('lightbox', Lightbox);
@@ -26,6 +29,9 @@ ngkit.component('slideshowParallax', SliderParallax);
 ngkit.component('sortable', Sortable);
 ngkit.component('tooltip', Tooltip);
 ngkit.component('upload', Upload);
+
+// TODO: Remove when understanding it understood
+ngkit.component('testcomp', Testcomp);
 
 if (BUNDLED) {
     boot(ngkit);

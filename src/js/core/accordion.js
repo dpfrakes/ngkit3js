@@ -44,7 +44,6 @@ export default {
     computed: {
 
         items({targets}, $el) {
-            // console.log('Inside items.....', targets);
             return $$(targets, $el);
         }
 
@@ -70,6 +69,7 @@ export default {
     ],
 
     connected() {
+
         if (this.active === false) {
             return;
         }
@@ -81,7 +81,7 @@ export default {
     },
 
     update() {
-        // console.log('Inside update.....', this);
+
         this.items.forEach(el => this._toggle($(this.content, el), hasClass(el, this.clsOpen)));
 
         const active = !this.collapsible && !hasClass(this.items, this.clsOpen) && this.items[0];
@@ -93,7 +93,6 @@ export default {
     methods: {
 
         toggle(item, animate) {
-            // console.log('In toggle item.... ', item);
 
             const index = getIndex(item, this.items);
             const active = filter(this.items, `.${this.clsOpen}`);
@@ -125,13 +124,7 @@ export default {
                     if (!el._wrapper) {
                         el._wrapper = wrapAll(content, '<div>');
                         attr(el._wrapper, 'hidden', state ? '' : null);
-                        if (state) {
-                            console.log("State is: ", state);
-                            console.log('wrapper... ', toNode(el._wrapper));
-                            $(el._wrapper).classList.add('ng-hidden');
-                        } else {
-                            $(el._wrapper).classList.remove('ng-hidden');
-                        }
+
                     }
 
                     this._toggle(content, true);
