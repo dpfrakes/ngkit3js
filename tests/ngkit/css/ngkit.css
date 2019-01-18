@@ -11174,7 +11174,7 @@ Weight: 10
 
 Styleguide Media.Symbols.Usage
 */
-/** 
+/**
 Available Symbols:
 
 <table class="settings">
@@ -11234,7 +11234,7 @@ Weight: 20
 
 Styleguide Media.Symbols.AvailableSymbols
 */
-/** 
+/**
 Ordered List Symbols:
 
 By adding the `ng-symbols` class to an Ordered List, the svg-number symbols will be used to number line items.
@@ -11313,7 +11313,7 @@ ol.ng-symbols li:nth-child(10):before {
 ol.ng-symbols li:nth-child(11):before {
   background-image: url(/static/images/css_images/symbol_circle_11.svg); }
 
-/** 
+/**
 Ordered List Symbol Size Modifiers:
 
 To display the symbols within an ordered list smaller or larger, add the `ng-symbols-small` or `ng-symbols-large` size-modifier class.
@@ -37534,4 +37534,3 @@ Note the a tag is positioned relative.
   width: 100%;
   background-size: 100% 100%; }
 
-/*# sourceMappingURL=ngkit.css.map */

@@ -18,14 +18,15 @@
 </head>
 <body>
 
-<h1>Alert</h1>
+<h1>Autocomplete</h1>
 Notes:<br/>
+Use Proper JSON notation when setting data attributes:
 <pre>
     <code class="xml">
-                &lt;div class=&quot;ng-alert ng-alert-success&quot; data-ng-alert&gt;
-                    &lt;a href=&quot;&quot; class=&quot;ng-alert-close ng-close&quot;&gt;&lt;/a&gt;
-                    &lt;p&gt;To indicate success or a positive message add the .ng-alert-success class.&lt;/p&gt;
-                &lt;/div&gt;
+        Search:
+            &lt;div class=&quot;ng-autocomplete ng-form&quot; data-ng-autocomplete='{&quot;source&quot;:&quot;data/autocomplete.json&quot;}'&gt;
+                &lt;input type=&quot;text&quot; /&gt;
+            &lt;/div&gt;
     </code>
 </pre>
 
@@ -37,11 +38,9 @@ Notes:<br/>
         <div  class="ng-width-1-1   ">
 
 
-
-                <div class="ng-alert ng-alert-success" data-ng-alert>
-                    <a href="" class="ng-alert-close ng-close"></a>
-                    <p>To indicate success or a positive message add the <code>.ng-alert-success</code> class.</p>
-                </div>
+            <div class="ng-autocomplete ng-form" data-ng-autocomplete='{"source":"data/autocomplete.json"}'>
+                Search: <input type="text" />
+            </div>
 
 
     </div>

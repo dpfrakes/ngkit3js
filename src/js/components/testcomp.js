@@ -58,6 +58,13 @@ export default {
         },
     },
 
+    created() {
+        console.log("Inside created...");
+        /**
+         * Believe this is just when the object is instantiated....Probally not part of the real lifecycle
+         */
+    },
+
     beforeConnect() {
         /**
          * beforeConnect seems to be called many, many times in the beginning of the lifecycle

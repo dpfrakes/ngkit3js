@@ -16,3 +16,5 @@ export * from './promise';
 export * from './selector';
 export * from './style';
 export * from './touch';
+export * from './performance';
+

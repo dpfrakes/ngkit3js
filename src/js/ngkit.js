@@ -13,6 +13,9 @@ import Sortable from './components/sortable';
 import Tooltip from './components/tooltip';
 import Upload from './components/upload';
 
+// Custom Components ported over from custom components in NGKit 2
+import Autocomplete from './components/autocomplete';
+
 // TODO: Remove when understanding it understood
 import Testcomp from './components/testcomp';
 
@@ -29,6 +32,9 @@ ngkit.component('slideshowParallax', SliderParallax);
 ngkit.component('sortable', Sortable);
 ngkit.component('tooltip', Tooltip);
 ngkit.component('upload', Upload);
+
+// Custom Components ported over from custom components in NGKit 2
+ngkit.component('autocomplete', Autocomplete);
 
 // TODO: Remove when understanding it understood
 ngkit.component('testcomp', Testcomp);
