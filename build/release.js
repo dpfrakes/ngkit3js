@@ -45,8 +45,6 @@ async function updateVersion(version) {
 
 function compile(version) {
     execSync('yarn compile', {stdio: [0, 1, 2]});
-    execSync('yarn compile-rtl', {stdio: [0, 1, 2]});
-    execSync('yarn build-scss', {stdio: [0, 1, 2]});
     return version
 }
 
@@ -61,9 +59,5 @@ function createPackage(version) {
     archive.file('dist/js/ngkit.min.js', {name: '/js/ngkit.min.js'});
     archive.file('dist/js/ngkit-icons.js', {name: '/js/ngkit-icons.js'});
     archive.file('dist/js/ngkit-icons.min.js', {name: '/js/ngkit-icons.min.js'});
-    archive.file('dist/css/ngkit.css', {name: '/css/ngkit.css'});
-    archive.file('dist/css/ngkit.min.css', {name: '/css/ngkit.min.css'});
-    archive.file('dist/css/ngkit-rtl.css', {name: '/css/ngkit-rtl.css'});
-    archive.file('dist/css/ngkit-rtl.min.css', {name: '/css/ngkit-rtl.min.css'});
     archive.finalize();
 }

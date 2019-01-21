@@ -47,7 +47,7 @@ if (publish) {
     execSync(`npm version ${version}-dev.${hash} --git-tag-version false`, execOpts);
 
     // create dist files
-    execSync('npm run compile && npm run compile-rtl && npm run build-scss', execOpts);
+    execSync('npm run compile', execOpts);
 
     // publish to dev tag
     execSync('npm publish --tag dev', execOpts);
